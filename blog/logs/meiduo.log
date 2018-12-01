@@ -1,0 +1,735 @@
+WARNING 2018-11-29 15:56:11,776 base 152 Not Found: /
+WARNING 2018-11-29 15:56:11,777 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-29 15:57:25,955 base 152 Not Found: /
+WARNING 2018-11-29 15:57:25,957 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-29 16:39:09,570 base 152 Not Found: /
+WARNING 2018-11-29 16:39:09,571 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-29 16:39:09,627 base 152 Not Found: /favicon.ico
+WARNING 2018-11-29 16:39:09,630 basehttp 124 "GET /favicon.ico HTTP/1.1" 404 2066
+WARNING 2018-11-29 16:39:16,746 base 152 Not Found: /user/
+WARNING 2018-11-29 16:39:16,747 basehttp 124 "GET /user/ HTTP/1.1" 404 2101
+WARNING 2018-11-29 16:51:35,347 base 152 Not Found: /
+WARNING 2018-11-29 16:51:35,348 basehttp 124 "GET / HTTP/1.1" 404 2015
+INFO 2018-11-29 16:54:49,657 basehttp 124 "OPTIONS /user/register/ HTTP/1.1" 200 0
+ERROR 2018-11-29 16:54:49,663 exception 135 Internal Server Error: /user/register/
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/views.py", line 480, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/mixins.py", line 20, in create
+    serializer.is_valid(raise_exception=True)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 236, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 434, in run_validation
+    value = self.to_internal_value(data)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 482, in to_internal_value
+    fields = self._writable_fields
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 370, in _writable_fields
+    field for field in self.fields.values() if not field.read_only
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 363, in fields
+    for key, value in self.get_fields().items():
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 1045, in get_fields
+    source, info, model, depth
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 1190, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 1302, in build_unknown_field
+    (field_name, model_class.__name__)
+django.core.exceptions.ImproperlyConfigured: Field name `eamil` is not valid for model `User`.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/settings.py", line 183, in import_from_string
+    module = import_module(module_path)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 944, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 944, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 956, in _find_and_load_unlocked
+ImportError: No module named 'meiduo_mall'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/views.py", line 483, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/views.py", line 437, in handle_exception
+    exception_handler = self.get_exception_handler()
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/views.py", line 288, in get_exception_handler
+    return self.settings.EXCEPTION_HANDLER
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/settings.py", line 170, in perform_import
+    return import_from_string(val, setting_name)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/settings.py", line 187, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'meiduo_mall.utils.exceptions.custom_exception_handler' for API setting 'EXCEPTION_HANDLER'. ImportError: No module named 'meiduo_mall'.
+ERROR 2018-11-29 16:54:50,093 basehttp 124 "POST /user/register/ HTTP/1.1" 500 173777
+ERROR 2018-11-29 16:54:51,207 exception 135 Internal Server Error: /user/register/
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/views.py", line 480, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/mixins.py", line 20, in create
+    serializer.is_valid(raise_exception=True)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 236, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 434, in run_validation
+    value = self.to_internal_value(data)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 482, in to_internal_value
+    fields = self._writable_fields
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 370, in _writable_fields
+    field for field in self.fields.values() if not field.read_only
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 363, in fields
+    for key, value in self.get_fields().items():
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 1045, in get_fields
+    source, info, model, depth
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 1190, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 1302, in build_unknown_field
+    (field_name, model_class.__name__)
+django.core.exceptions.ImproperlyConfigured: Field name `eamil` is not valid for model `User`.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/settings.py", line 183, in import_from_string
+    module = import_module(module_path)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 944, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 944, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 956, in _find_and_load_unlocked
+ImportError: No module named 'meiduo_mall'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/views.py", line 483, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/views.py", line 437, in handle_exception
+    exception_handler = self.get_exception_handler()
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/views.py", line 288, in get_exception_handler
+    return self.settings.EXCEPTION_HANDLER
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/settings.py", line 170, in perform_import
+    return import_from_string(val, setting_name)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/settings.py", line 187, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'meiduo_mall.utils.exceptions.custom_exception_handler' for API setting 'EXCEPTION_HANDLER'. ImportError: No module named 'meiduo_mall'.
+ERROR 2018-11-29 16:54:51,389 basehttp 124 "POST /user/register/ HTTP/1.1" 500 173777
+ERROR 2018-11-29 16:56:13,539 exception 135 Internal Server Error: /user/register/
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/views.py", line 480, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/mixins.py", line 20, in create
+    serializer.is_valid(raise_exception=True)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/serializers.py", line 244, in is_valid
+    raise ValidationError(self.errors)
+rest_framework.exceptions.ValidationError: {'password2': [ErrorDetail(string='该字段是必填项。', code='required')]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/settings.py", line 183, in import_from_string
+    module = import_module(module_path)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 944, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 944, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 956, in _find_and_load_unlocked
+ImportError: No module named 'meiduo_mall'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/views.py", line 483, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/views.py", line 437, in handle_exception
+    exception_handler = self.get_exception_handler()
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/views.py", line 288, in get_exception_handler
+    return self.settings.EXCEPTION_HANDLER
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/settings.py", line 170, in perform_import
+    return import_from_string(val, setting_name)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/rest_framework/settings.py", line 187, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'meiduo_mall.utils.exceptions.custom_exception_handler' for API setting 'EXCEPTION_HANDLER'. ImportError: No module named 'meiduo_mall'.
+ERROR 2018-11-29 16:56:13,632 basehttp 124 "POST /user/register/ HTTP/1.1" 500 130330
+WARNING 2018-11-29 16:57:30,094 base 152 Not Found: /
+WARNING 2018-11-29 16:57:30,096 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-29 16:57:32,648 basehttp 124 "POST /user/register/ HTTP/1.1" 400 42
+WARNING 2018-11-29 16:58:12,524 basehttp 124 "POST /user/register/ HTTP/1.1" 400 42
+INFO 2018-11-29 16:59:07,108 basehttp 124 "POST /user/register/ HTTP/1.1" 201 133
+WARNING 2018-11-29 16:59:34,067 basehttp 124 "POST /user/register/ HTTP/1.1" 400 59
+INFO 2018-11-29 17:11:48,140 basehttp 124 "OPTIONS /user/login HTTP/1.1" 200 0
+ERROR 2018-11-29 17:11:48,178 exception 135 Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/user/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2018-11-29 17:11:48,336 basehttp 124 "POST /user/login HTTP/1.1" 500 71015
+ERROR 2018-11-29 17:16:09,756 exception 135 Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/python/.virtualenvs/django_py3/lib/python3.5/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/user/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2018-11-29 17:16:09,838 basehttp 124 "POST /user/login HTTP/1.1" 500 71015
+INFO 2018-11-29 17:17:40,833 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 0
+ERROR 2018-11-29 17:17:40,876 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7fde85739b38>，'QuerySet' object has no attribute 'username'
+ERROR 2018-11-29 17:17:40,877 basehttp 124 "POST /user/login/ HTTP/1.1" 500 148
+INFO 2018-11-29 17:18:05,852 basehttp 124 "POST /user/login/ HTTP/1.1" 200 36
+INFO 2018-11-29 17:20:30,566 basehttp 124 "POST /user/login/ HTTP/1.1" 200 36
+WARNING 2018-11-29 17:20:50,331 base 152 Not Found: /
+WARNING 2018-11-29 17:20:50,336 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-29 17:24:47,285 base 152 Not Found: /
+WARNING 2018-11-29 17:24:47,287 basehttp 124 "GET / HTTP/1.1" 404 2015
+ERROR 2018-11-29 17:25:07,576 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7f5b201085c0>，'dict' object has no attribute 'username'
+ERROR 2018-11-29 17:25:07,579 basehttp 124 "POST /user/login/ HTTP/1.1" 500 144
+ERROR 2018-11-29 17:25:55,531 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7f5b2010e3c8>，'dict' object has no attribute 'username'
+ERROR 2018-11-29 17:25:55,533 basehttp 124 "POST /user/login/ HTTP/1.1" 500 144
+WARNING 2018-11-29 17:26:34,125 base 152 Not Found: /
+WARNING 2018-11-29 17:26:34,132 basehttp 124 "GET / HTTP/1.1" 404 2015
+ERROR 2018-11-29 17:26:38,342 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7efe866c45c0>，'dict' object has no attribute 'username'
+ERROR 2018-11-29 17:26:38,349 basehttp 124 "POST /user/login/ HTTP/1.1" 500 144
+ERROR 2018-11-29 17:26:53,751 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7efe866cafd0>，'dict' object has no attribute 'username'
+ERROR 2018-11-29 17:26:53,756 basehttp 124 "POST /user/login/ HTTP/1.1" 500 144
+WARNING 2018-11-29 17:27:30,771 base 152 Not Found: /user/login/
+WARNING 2018-11-29 17:27:30,774 basehttp 124 "POST /user/login/ HTTP/1.1" 404 30
+INFO 2018-11-29 17:28:39,755 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 0
+WARNING 2018-11-29 17:28:42,452 base 152 Not Found: /user/login/
+WARNING 2018-11-29 17:28:42,454 basehttp 124 "POST /user/login/ HTTP/1.1" 404 30
+WARNING 2018-11-29 17:28:53,642 base 152 Not Found: /user/login/
+WARNING 2018-11-29 17:28:53,646 basehttp 124 "POST /user/login/ HTTP/1.1" 404 30
+WARNING 2018-11-29 17:29:14,480 base 152 Not Found: /user/login/
+WARNING 2018-11-29 17:29:14,482 basehttp 124 "POST /user/login/ HTTP/1.1" 404 30
+INFO 2018-11-29 17:29:34,016 basehttp 124 "POST /user/login/ HTTP/1.1" 200 36
+WARNING 2018-11-29 17:29:48,501 base 152 Not Found: /user/login/
+WARNING 2018-11-29 17:29:48,503 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 19:50:50,101 base 152 Not Found: /
+WARNING 2018-11-30 19:50:50,231 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-30 19:50:51,154 base 152 Not Found: /favicon.ico
+WARNING 2018-11-30 19:50:51,155 basehttp 124 "GET /favicon.ico HTTP/1.1" 404 2066
+INFO 2018-11-30 19:51:11,938 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 0
+WARNING 2018-11-30 19:51:11,980 base 152 Not Found: /user/login/
+WARNING 2018-11-30 19:51:11,981 basehttp 124 "POST /user/login/ HTTP/1.1" 404 30
+WARNING 2018-11-30 19:51:27,839 base 152 Not Found: /user/login/
+WARNING 2018-11-30 19:51:27,840 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 19:51:34,561 base 152 Not Found: /user/login/
+WARNING 2018-11-30 19:51:34,562 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 19:51:39,718 base 152 Not Found: /user/login/
+WARNING 2018-11-30 19:51:39,719 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 19:51:46,668 base 152 Not Found: /user/login/
+WARNING 2018-11-30 19:51:46,668 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 19:51:55,412 base 152 Not Found: /user/login/
+WARNING 2018-11-30 19:51:55,413 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 19:52:01,128 base 152 Not Found: /user/login/
+WARNING 2018-11-30 19:52:01,129 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 19:52:05,131 base 152 Not Found: /user/login/
+WARNING 2018-11-30 19:52:05,131 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 19:52:10,353 base 152 Not Found: /user/login/
+WARNING 2018-11-30 19:52:10,354 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+INFO 2018-11-30 19:52:31,134 basehttp 124 "OPTIONS /user/register/ HTTP/1.1" 200 0
+INFO 2018-11-30 19:52:31,241 basehttp 124 "POST /user/register/ HTTP/1.1" 201 132
+WARNING 2018-11-30 19:52:42,778 base 152 Not Found: /user/login/
+WARNING 2018-11-30 19:52:42,778 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+INFO 2018-11-30 19:52:47,941 basehttp 124 "POST /user/login/ HTTP/1.1" 200 35
+WARNING 2018-11-30 19:56:51,999 basehttp 124 "POST /user/register/ HTTP/1.1" 400 55
+INFO 2018-11-30 19:56:59,737 basehttp 124 "POST /user/register/ HTTP/1.1" 201 131
+WARNING 2018-11-30 19:57:14,869 base 152 Not Found: /
+WARNING 2018-11-30 19:57:14,874 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-30 20:00:44,844 basehttp 124 "POST /user/register/ HTTP/1.1" 400 59
+WARNING 2018-11-30 20:00:45,155 base 152 Not Found: /
+WARNING 2018-11-30 20:00:45,159 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-30 20:00:47,447 basehttp 124 "POST /user/register/ HTTP/1.1" 400 59
+WARNING 2018-11-30 20:00:52,618 basehttp 124 "POST /user/register/ HTTP/1.1" 400 59
+ERROR 2018-11-30 20:10:08,098 exceptions 15 服务器内部错误： <blog.apps.passport.views.RegisterView object at 0x7f622d0eaa58>，You cannot call `.save()` after accessing `serializer.data`.If you need to access data before committing to the database then inspect 'serializer.validated_data' instead. 
+ERROR 2018-11-30 20:10:08,101 basehttp 124 "POST /user/register/ HTTP/1.1" 500 277
+INFO 2018-11-30 20:10:14,198 basehttp 124 "OPTIONS /user/register/ HTTP/1.1" 200 0
+INFO 2018-11-30 20:10:17,650 basehttp 124 "POST /user/register/ HTTP/1.1" 201 133
+INFO 2018-11-30 20:12:41,008 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 0
+WARNING 2018-11-30 20:12:41,078 base 152 Not Found: /user/login/
+WARNING 2018-11-30 20:12:41,081 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+INFO 2018-11-30 20:12:50,853 basehttp 124 "POST /user/login/ HTTP/1.1" 200 35
+INFO 2018-11-30 20:26:12,467 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 0
+WARNING 2018-11-30 20:26:12,587 base 152 Not Found: /user/login/
+WARNING 2018-11-30 20:26:12,590 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 20:26:25,316 base 152 Not Found: /user/login/
+WARNING 2018-11-30 20:26:25,317 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 20:26:27,013 base 152 Not Found: /user/login/
+WARNING 2018-11-30 20:26:27,014 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 20:26:31,640 base 152 Not Found: /user/login/
+WARNING 2018-11-30 20:26:31,647 basehttp 124 "POST /user/login/ HTTP/1.1" 404 30
+WARNING 2018-11-30 20:27:23,043 base 152 Not Found: /user/login/
+WARNING 2018-11-30 20:27:23,048 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 20:27:26,840 base 152 Not Found: /user/login/
+WARNING 2018-11-30 20:27:26,842 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 20:27:30,260 base 152 Not Found: /user/login/
+WARNING 2018-11-30 20:27:30,263 basehttp 124 "POST /user/login/ HTTP/1.1" 404 30
+WARNING 2018-11-30 20:27:38,579 base 152 Not Found: /user/login/
+WARNING 2018-11-30 20:27:38,580 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+WARNING 2018-11-30 20:27:45,050 base 152 Not Found: /user/login/
+WARNING 2018-11-30 20:27:45,051 basehttp 124 "POST /user/login/ HTTP/1.1" 404 27
+INFO 2018-11-30 20:32:30,969 basehttp 124 "OPTIONS /user/register/ HTTP/1.1" 200 0
+WARNING 2018-11-30 20:32:31,410 basehttp 124 "POST /user/register/ HTTP/1.1" 400 42
+WARNING 2018-11-30 20:32:39,687 base 152 Not Found: /
+WARNING 2018-11-30 20:32:39,689 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-30 20:32:54,585 base 152 Not Found: /
+WARNING 2018-11-30 20:32:54,586 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-30 20:32:59,240 basehttp 124 "POST /user/register/ HTTP/1.1" 400 42
+WARNING 2018-11-30 20:33:08,717 basehttp 124 "POST /user/register/ HTTP/1.1" 400 42
+WARNING 2018-11-30 20:34:24,017 basehttp 124 "POST /user/register/ HTTP/1.1" 400 42
+WARNING 2018-11-30 20:34:46,973 basehttp 124 "POST /user/register/ HTTP/1.1" 400 42
+WARNING 2018-11-30 20:35:13,883 basehttp 124 "POST /user/register/ HTTP/1.1" 400 122
+WARNING 2018-11-30 20:35:15,766 basehttp 124 "POST /user/register/ HTTP/1.1" 400 122
+WARNING 2018-11-30 20:35:31,097 basehttp 124 "POST /user/register/ HTTP/1.1" 400 122
+WARNING 2018-11-30 20:36:18,407 basehttp 124 "POST /user/register/ HTTP/1.1" 400 122
+WARNING 2018-11-30 20:38:10,806 basehttp 124 "POST /user/register/ HTTP/1.1" 400 122
+WARNING 2018-11-30 20:38:20,395 basehttp 124 "POST /user/register/ HTTP/1.1" 400 122
+WARNING 2018-11-30 20:38:24,953 basehttp 124 "POST /user/register/ HTTP/1.1" 400 82
+WARNING 2018-11-30 20:38:26,517 basehttp 124 "POST /user/register/ HTTP/1.1" 400 42
+WARNING 2018-11-30 20:38:28,355 basehttp 124 "POST /user/register/ HTTP/1.1" 400 55
+WARNING 2018-11-30 20:38:48,835 basehttp 124 "POST /user/register/ HTTP/1.1" 400 122
+WARNING 2018-11-30 20:38:54,278 basehttp 124 "POST /user/register/ HTTP/1.1" 400 55
+INFO 2018-11-30 20:38:58,610 basehttp 124 "POST /user/register/ HTTP/1.1" 201 128
+WARNING 2018-11-30 20:40:05,807 basehttp 124 "POST /user/register/ HTTP/1.1" 400 122
+WARNING 2018-11-30 20:40:19,009 base 152 Not Found: /
+WARNING 2018-11-30 20:40:19,010 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-30 20:40:26,331 basehttp 124 "POST /user/register/ HTTP/1.1" 400 41
+ERROR 2018-11-30 20:40:28,953 exceptions 15 服务器内部错误： <blog.apps.passport.views.RegisterView object at 0x7f61d545e550>，'eamil'
+ERROR 2018-11-30 20:40:28,955 basehttp 124 "POST /user/register/ HTTP/1.1" 500 113
+ERROR 2018-11-30 20:40:41,647 exceptions 15 服务器内部错误： <blog.apps.passport.views.RegisterView object at 0x7f2306e14828>，'email'
+ERROR 2018-11-30 20:40:41,648 basehttp 124 "POST /user/register/ HTTP/1.1" 500 113
+ERROR 2018-11-30 20:40:42,659 exceptions 15 服务器内部错误： <blog.apps.passport.views.RegisterView object at 0x7f230521e198>，'email'
+ERROR 2018-11-30 20:40:42,660 basehttp 124 "POST /user/register/ HTTP/1.1" 500 113
+ERROR 2018-11-30 20:41:28,293 exceptions 15 服务器内部错误： <blog.apps.passport.views.RegisterView object at 0x7f8b7b952a20>，'email'
+ERROR 2018-11-30 20:41:28,293 basehttp 124 "POST /user/register/ HTTP/1.1" 500 113
+WARNING 2018-11-30 20:42:27,108 basehttp 124 "POST /user/register/ HTTP/1.1" 400 43
+INFO 2018-11-30 20:42:38,357 basehttp 124 "OPTIONS /user/register/ HTTP/1.1" 200 0
+WARNING 2018-11-30 20:42:38,392 basehttp 124 "POST /user/register/ HTTP/1.1" 400 47
+WARNING 2018-11-30 20:42:58,552 basehttp 124 "POST /user/register/ HTTP/1.1" 400 47
+WARNING 2018-11-30 20:43:16,144 basehttp 124 "POST /user/register/ HTTP/1.1" 400 43
+WARNING 2018-11-30 20:43:20,970 basehttp 124 "POST /user/register/ HTTP/1.1" 400 41
+WARNING 2018-11-30 20:43:23,073 basehttp 124 "POST /user/register/ HTTP/1.1" 400 81
+WARNING 2018-11-30 20:43:24,866 basehttp 124 "POST /user/register/ HTTP/1.1" 400 122
+WARNING 2018-11-30 20:44:47,273 base 152 Not Found: /
+WARNING 2018-11-30 20:44:47,277 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-30 20:47:42,686 base 152 Not Found: /
+WARNING 2018-11-30 20:47:42,690 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-30 20:47:44,823 basehttp 124 "POST /user/register/ HTTP/1.1" 400 59
+INFO 2018-11-30 20:47:51,805 basehttp 124 "POST /user/register/ HTTP/1.1" 201 149
+INFO 2018-11-30 20:52:57,635 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+INFO 2018-11-30 20:53:12,401 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+ERROR 2018-11-30 20:54:35,986 exceptions 15 服务器内部错误： <blog.apps.passport.views.LogoutView object at 0x7f2bbeced6d8>，'user_id'
+ERROR 2018-11-30 20:54:35,989 basehttp 124 "GET /user/logout/ HTTP/1.1" 500 113
+ERROR 2018-11-30 20:56:24,382 exceptions 15 服务器内部错误： <blog.apps.passport.views.LogoutView object at 0x7f2c905d4f28>，'user_id'
+ERROR 2018-11-30 20:56:24,385 basehttp 124 "GET /user/logout/ HTTP/1.1" 500 113
+WARNING 2018-11-30 21:00:48,928 base 152 Not Found: /
+WARNING 2018-11-30 21:00:48,930 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-30 21:04:39,811 base 152 Not Found: /
+WARNING 2018-11-30 21:04:39,815 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-11-30 21:13:04,524 base 152 Not Found: /
+WARNING 2018-11-30 21:13:04,525 basehttp 124 "GET / HTTP/1.1" 404 2015
+ERROR 2018-11-30 21:13:08,444 exceptions 15 服务器内部错误： <blog.apps.passport.views.LogoutView object at 0x7fb98859c780>，'user_id'
+ERROR 2018-11-30 21:13:08,445 basehttp 124 "GET /user/logout/ HTTP/1.1" 500 113
+ERROR 2018-11-30 21:13:25,871 exceptions 15 服务器内部错误： <blog.apps.passport.views.LogoutView object at 0x7fb9885a3390>，'user_id'
+ERROR 2018-11-30 21:13:25,874 basehttp 124 "GET /user/logout/ HTTP/1.1" 500 113
+WARNING 2018-11-30 21:13:41,490 base 152 Not Found: /
+WARNING 2018-11-30 21:13:41,498 basehttp 124 "GET / HTTP/1.1" 404 2015
+ERROR 2018-11-30 21:16:00,987 exceptions 15 服务器内部错误： <blog.apps.passport.views.LogoutView object at 0x7f7b5d627be0>，'user_id'
+ERROR 2018-11-30 21:16:00,989 basehttp 124 "GET /user/logout/ HTTP/1.1" 500 113
+ERROR 2018-11-30 21:16:02,050 exceptions 15 服务器内部错误： <blog.apps.passport.views.LogoutView object at 0x7f7b5d3d8198>，'user_id'
+ERROR 2018-11-30 21:16:02,055 basehttp 124 "GET /user/logout/ HTTP/1.1" 500 113
+INFO 2018-11-30 21:16:37,359 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 0
+INFO 2018-11-30 21:16:37,481 basehttp 124 "POST /user/login/ HTTP/1.1" 200 35
+WARNING 2018-12-01 11:05:08,756 base 152 Not Found: /
+WARNING 2018-12-01 11:05:08,783 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-12-01 11:05:09,416 base 152 Not Found: /favicon.ico
+WARNING 2018-12-01 11:05:09,417 basehttp 124 "GET /favicon.ico HTTP/1.1" 404 2066
+INFO 2018-12-01 11:05:20,291 basehttp 124 "GET /user/login HTTP/1.1" 301 0
+WARNING 2018-12-01 11:05:20,431 basehttp 124 "GET /user/login/ HTTP/1.1" 405 5473
+INFO 2018-12-01 11:05:20,503 basehttp 124 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2018-12-01 11:05:20,506 basehttp 124 "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2018-12-01 11:05:20,542 basehttp 124 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2018-12-01 11:05:20,543 basehttp 124 "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2018-12-01 11:05:20,543 basehttp 124 "GET /static/rest_framework/js/jquery-3.3.1.min.js HTTP/1.1" 304 0
+INFO 2018-12-01 11:05:20,546 basehttp 124 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2018-12-01 11:05:20,547 basehttp 124 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2018-12-01 11:05:20,548 basehttp 124 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2018-12-01 11:05:20,553 basehttp 124 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2018-12-01 11:05:20,554 basehttp 124 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2018-12-01 11:05:20,924 basehttp 124 "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+INFO 2018-12-01 11:05:35,783 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 5743
+INFO 2018-12-01 11:05:39,931 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 5743
+INFO 2018-12-01 11:05:46,420 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 5743
+WARNING 2018-12-01 11:05:50,343 basehttp 124 "GET /user/login/ HTTP/1.1" 405 5473
+ERROR 2018-12-01 11:06:25,770 exceptions 15 服务器内部错误： <blog.apps.passport.views.LogoutView object at 0x7fdac0385438>，'user_id'
+ERROR 2018-12-01 11:06:25,772 basehttp 124 "GET /user/logout/ HTTP/1.1" 500 113
+INFO 2018-12-01 11:06:57,163 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 0
+WARNING 2018-12-01 11:06:57,289 base 152 Not Found: /user/login/
+WARNING 2018-12-01 11:06:57,289 basehttp 124 "POST /user/login/ HTTP/1.1" 404 36
+ERROR 2018-12-01 11:07:58,830 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7fdac13fbdd8>，'User' object has no attribute 'is_ais_active'
+ERROR 2018-12-01 11:07:58,833 basehttp 124 "POST /user/login/ HTTP/1.1" 500 149
+ERROR 2018-12-01 11:08:11,481 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7fdac13fb9b0>，'User' object has no attribute 'is_ais_active'
+ERROR 2018-12-01 11:08:11,482 basehttp 124 "POST /user/login/ HTTP/1.1" 500 149
+WARNING 2018-12-01 11:09:00,157 base 152 Not Found: /
+WARNING 2018-12-01 11:09:00,168 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-12-01 11:09:40,358 base 152 Not Found: /
+WARNING 2018-12-01 11:09:40,373 basehttp 124 "GET / HTTP/1.1" 404 2015
+ERROR 2018-12-01 11:09:47,524 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7f49d2543c88>，sensitive_post_parameters didn't receive an HttpRequest. If you are decorating a classmethod, be sure to use @method_decorator.
+ERROR 2018-12-01 11:09:47,526 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7f49d30432b0>，sensitive_post_parameters didn't receive an HttpRequest. If you are decorating a classmethod, be sure to use @method_decorator.
+ERROR 2018-12-01 11:09:47,529 basehttp 124 "POST /user/login/ HTTP/1.1" 500 230
+ERROR 2018-12-01 11:09:47,531 basehttp 124 "POST /user/login/ HTTP/1.1" 500 230
+ERROR 2018-12-01 11:11:05,135 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7f49d2543668>，sensitive_post_parameters didn't receive an HttpRequest. If you are decorating a classmethod, be sure to use @method_decorator.
+ERROR 2018-12-01 11:11:05,139 basehttp 124 "POST /user/login/ HTTP/1.1" 500 230
+INFO 2018-12-01 11:26:43,347 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 0
+ERROR 2018-12-01 11:26:43,516 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7fd87a564e80>，sensitive_post_parameters didn't receive an HttpRequest. If you are decorating a classmethod, be sure to use @method_decorator.
+ERROR 2018-12-01 11:26:43,519 basehttp 124 "POST /user/login/ HTTP/1.1" 500 230
+ERROR 2018-12-01 11:26:46,293 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7fd87b327198>，sensitive_post_parameters didn't receive an HttpRequest. If you are decorating a classmethod, be sure to use @method_decorator.
+ERROR 2018-12-01 11:26:46,296 basehttp 124 "POST /user/login/ HTTP/1.1" 500 230
+ERROR 2018-12-01 11:26:48,464 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7fd87a595dd8>，sensitive_post_parameters didn't receive an HttpRequest. If you are decorating a classmethod, be sure to use @method_decorator.
+ERROR 2018-12-01 11:26:48,468 basehttp 124 "POST /user/login/ HTTP/1.1" 500 230
+WARNING 2018-12-01 11:26:59,454 base 152 Not Found: /
+WARNING 2018-12-01 11:26:59,459 basehttp 124 "GET / HTTP/1.1" 404 2015
+ERROR 2018-12-01 11:27:09,007 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7f66e8f999b0>，sensitive_post_parameters didn't receive an HttpRequest. If you are decorating a classmethod, be sure to use @method_decorator.
+ERROR 2018-12-01 11:27:09,008 basehttp 124 "POST /user/login/ HTTP/1.1" 500 230
+ERROR 2018-12-01 11:27:34,285 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7f7230610208>，sensitive_post_parameters didn't receive an HttpRequest. If you are decorating a classmethod, be sure to use @method_decorator.
+ERROR 2018-12-01 11:27:34,287 basehttp 124 "POST /user/login/ HTTP/1.1" 500 230
+WARNING 2018-12-01 11:27:55,203 base 152 Not Found: /
+WARNING 2018-12-01 11:27:55,208 basehttp 124 "GET / HTTP/1.1" 404 2015
+ERROR 2018-12-01 11:28:02,572 exceptions 15 服务器内部错误： <blog.apps.passport.views.LoginView object at 0x7f1a5ca00630>，sensitive_post_parameters didn't receive an HttpRequest. If you are decorating a classmethod, be sure to use @method_decorator.
+ERROR 2018-12-01 11:28:02,574 basehttp 124 "POST /user/login/ HTTP/1.1" 500 230
+INFO 2018-12-01 11:31:23,438 basehttp 124 "POST /user/login/ HTTP/1.1" 200 35
+INFO 2018-12-01 11:32:29,341 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 11:32:41,682 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 11:32:57,871 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 11:33:10,330 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 11:34:51,564 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 11:35:16,630 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 11:35:39,762 basehttp 124 "OPTIONS /user/logout/ HTTP/1.1" 200 0
+WARNING 2018-12-01 11:35:40,148 basehttp 124 "POST /user/logout/ HTTP/1.1" 403 58
+WARNING 2018-12-01 11:35:43,573 basehttp 124 "POST /user/logout/ HTTP/1.1" 403 58
+WARNING 2018-12-01 11:36:45,485 basehttp 124 "POST /user/logout/ HTTP/1.1" 403 58
+WARNING 2018-12-01 11:37:00,007 basehttp 124 "GET /user/login/ HTTP/1.1" 405 5510
+WARNING 2018-12-01 11:37:06,588 basehttp 124 "GET /user/logout/ HTTP/1.1" 405 5519
+INFO 2018-12-01 11:37:14,051 basehttp 124 "POST /user/logout/ HTTP/1.1" 200 5434
+INFO 2018-12-01 11:38:31,100 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 0
+WARNING 2018-12-01 11:38:31,171 base 152 Not Found: /user/login/
+WARNING 2018-12-01 11:38:31,174 basehttp 124 "POST /user/login/ HTTP/1.1" 404 36
+INFO 2018-12-01 11:38:41,286 basehttp 124 "POST /user/login/ HTTP/1.1" 200 35
+WARNING 2018-12-01 11:38:57,508 basehttp 124 "POST /user/logout/ HTTP/1.1" 403 58
+INFO 2018-12-01 11:39:45,422 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 11:40:04,141 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 11:41:34,720 basehttp 124 "OPTIONS /user/register/ HTTP/1.1" 200 0
+INFO 2018-12-01 11:41:35,086 basehttp 124 "POST /user/register/ HTTP/1.1" 201 151
+INFO 2018-12-01 11:51:21,399 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 11:51:59,962 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 11:52:30,816 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 11:53:43,549 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 0
+WARNING 2018-12-01 11:53:43,654 basehttp 124 "POST /user/login/ HTTP/1.1" 403 58
+WARNING 2018-12-01 11:53:54,610 basehttp 124 "POST /user/login/ HTTP/1.1" 403 58
+WARNING 2018-12-01 11:55:08,804 base 152 Not Found: /user/login/
+WARNING 2018-12-01 11:55:08,809 basehttp 124 "POST /user/login/ HTTP/1.1" 404 36
+INFO 2018-12-01 11:55:15,372 basehttp 124 "POST /user/login/ HTTP/1.1" 200 35
+INFO 2018-12-01 11:55:27,481 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+WARNING 2018-12-01 12:01:21,196 basehttp 124 "POST /user/login/ HTTP/1.1" 403 58
+INFO 2018-12-01 12:01:35,102 basehttp 124 "POST /user/login/ HTTP/1.1" 200 35
+WARNING 2018-12-01 12:03:22,960 base 152 Not Found: /
+WARNING 2018-12-01 12:03:22,964 basehttp 124 "GET / HTTP/1.1" 404 2015
+INFO 2018-12-01 12:03:45,405 basehttp 124 "GET /user/logout/ HTTP/1.1" 200 12
+WARNING 2018-12-01 16:03:31,576 base 152 Not Found: /
+WARNING 2018-12-01 16:03:31,577 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-12-01 16:03:31,657 base 152 Not Found: /favicon.ico
+WARNING 2018-12-01 16:03:31,658 basehttp 124 "GET /favicon.ico HTTP/1.1" 404 2066
+INFO 2018-12-01 16:03:36,325 basehttp 124 "OPTIONS /user/logout/ HTTP/1.1" 200 0
+WARNING 2018-12-01 16:03:36,428 basehttp 124 "POST /user/logout/ HTTP/1.1" 403 58
+INFO 2018-12-01 16:11:26,762 basehttp 124 "POST /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 16:12:17,425 basehttp 124 "OPTIONS /user/login/ HTTP/1.1" 200 0
+INFO 2018-12-01 16:12:18,000 basehttp 124 "POST /user/login/ HTTP/1.1" 200 35
+INFO 2018-12-01 16:13:45,091 basehttp 124 "OPTIONS /user/logout/ HTTP/1.1" 200 0
+INFO 2018-12-01 16:13:45,117 basehttp 124 "POST /user/logout/ HTTP/1.1" 200 12
+WARNING 2018-12-01 16:14:12,949 base 152 Not Found: /user/login/
+WARNING 2018-12-01 16:14:12,949 basehttp 124 "POST /user/login/ HTTP/1.1" 404 36
+INFO 2018-12-01 16:14:16,665 basehttp 124 "POST /user/login/ HTTP/1.1" 200 35
+INFO 2018-12-01 16:14:38,556 basehttp 124 "POST /user/logout/ HTTP/1.1" 200 12
+INFO 2018-12-01 16:15:46,935 basehttp 124 "OPTIONS /user/register/ HTTP/1.1" 200 0
+WARNING 2018-12-01 16:15:46,959 basehttp 124 "POST /user/register/ HTTP/1.1" 400 82
+WARNING 2018-12-01 16:21:35,933 basehttp 124 "POST /user/register/ HTTP/1.1" 400 122
+WARNING 2018-12-01 16:49:08,074 base 152 Not Found: /
+WARNING 2018-12-01 16:49:08,103 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-12-01 16:49:08,225 base 152 Not Found: /favicon.ico
+WARNING 2018-12-01 16:49:08,225 basehttp 124 "GET /favicon.ico HTTP/1.1" 404 2066
+INFO 2018-12-01 16:49:26,974 basehttp 124 "OPTIONS /user/register/ HTTP/1.1" 200 0
+INFO 2018-12-01 16:49:27,137 basehttp 124 "POST /user/register/ HTTP/1.1" 201 153
+INFO 2018-12-01 16:50:42,189 basehttp 124 "OPTIONS /user/logout/ HTTP/1.1" 200 0
+INFO 2018-12-01 16:50:42,212 basehttp 124 "POST /user/logout/ HTTP/1.1" 200 12
+WARNING 2018-12-01 17:14:15,415 base 152 Not Found: /
+WARNING 2018-12-01 17:14:15,416 basehttp 124 "GET / HTTP/1.1" 404 2015
+INFO 2018-12-01 17:14:25,704 basehttp 124 "GET /admin/ HTTP/1.1" 302 0
+INFO 2018-12-01 17:14:25,929 basehttp 124 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1652
+INFO 2018-12-01 17:14:25,969 basehttp 124 "GET /static/admin/css/base.css HTTP/1.1" 200 16066
+INFO 2018-12-01 17:14:25,993 basehttp 124 "GET /static/admin/css/login.css HTTP/1.1" 200 1203
+INFO 2018-12-01 17:15:44,635 basehttp 124 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2018-12-01 17:15:44,784 basehttp 124 "GET /admin/ HTTP/1.1" 200 4959
+INFO 2018-12-01 17:15:44,807 basehttp 124 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+INFO 2018-12-01 17:15:44,873 basehttp 124 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2018-12-01 17:15:44,888 basehttp 124 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2018-12-01 17:16:10,873 basehttp 124 "GET /admin/main/nav/ HTTP/1.1" 200 4593
+INFO 2018-12-01 17:16:10,993 basehttp 124 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6170
+INFO 2018-12-01 17:16:11,035 basehttp 124 "GET /static/admin/js/core.js HTTP/1.1" 200 7976
+INFO 2018-12-01 17:16:11,089 basehttp 124 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+INFO 2018-12-01 17:16:11,103 basehttp 124 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6591
+INFO 2018-12-01 17:16:11,116 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 17:16:11,123 basehttp 124 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 258648
+INFO 2018-12-01 17:16:11,125 basehttp 124 "GET /static/admin/js/actions.js HTTP/1.1" 200 6501
+INFO 2018-12-01 17:16:11,135 basehttp 124 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1538
+INFO 2018-12-01 17:16:11,139 basehttp 124 "GET /static/admin/js/urlify.js HTTP/1.1" 200 8186
+INFO 2018-12-01 17:16:11,143 basehttp 124 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2018-12-01 17:16:11,168 basehttp 124 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+INFO 2018-12-01 17:16:11,509 basehttp 124 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2018-12-01 17:16:25,905 basehttp 124 "GET /admin/main/ HTTP/1.1" 200 4155
+INFO 2018-12-01 17:16:30,445 basehttp 124 "GET /admin/main/carousel/ HTTP/1.1" 200 4264
+INFO 2018-12-01 17:16:30,479 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 17:16:34,172 basehttp 124 "GET /admin/main/carousel/add/ HTTP/1.1" 200 5922
+INFO 2018-12-01 17:16:34,255 basehttp 124 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+INFO 2018-12-01 17:16:34,261 basehttp 124 "GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+INFO 2018-12-01 17:16:34,261 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 17:16:34,262 basehttp 124 "GET /static/admin/css/forms.css HTTP/1.1" 200 8173
+INFO 2018-12-01 17:16:34,292 basehttp 124 "GET /static/admin/css/widgets.css HTTP/1.1" 200 10340
+INFO 2018-12-01 17:16:38,856 basehttp 124 "GET /admin/main/carousel/ HTTP/1.1" 200 4264
+INFO 2018-12-01 17:16:38,982 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 17:16:48,595 basehttp 124 "GET /admin/main/ HTTP/1.1" 200 4155
+INFO 2018-12-01 17:16:51,628 basehttp 124 "GET /admin/main/nav/ HTTP/1.1" 200 4593
+INFO 2018-12-01 17:16:51,661 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 17:16:53,706 basehttp 124 "GET /admin/main/nav/add/ HTTP/1.1" 200 4842
+INFO 2018-12-01 17:16:53,735 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 17:17:12,174 basehttp 124 "POST /admin/main/nav/add/ HTTP/1.1" 302 0
+INFO 2018-12-01 17:17:12,305 basehttp 124 "GET /admin/main/nav/ HTTP/1.1" 200 6766
+INFO 2018-12-01 17:17:12,334 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 17:17:12,440 basehttp 124 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2018-12-01 17:17:12,442 basehttp 124 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+WARNING 2018-12-01 17:17:58,776 base 152 Not Found: /
+WARNING 2018-12-01 17:17:58,778 basehttp 124 "GET / HTTP/1.1" 404 2015
+WARNING 2018-12-01 17:31:12,806 base 152 Not Found: /navs/
+WARNING 2018-12-01 17:31:12,807 basehttp 124 "GET /navs/ HTTP/1.1" 404 2048
+WARNING 2018-12-01 17:31:12,970 base 152 Not Found: /navs/
+WARNING 2018-12-01 17:31:12,972 basehttp 124 "GET /navs/ HTTP/1.1" 404 2048
+ERROR 2018-12-01 17:38:54,881 exceptions 15 服务器内部错误： <blog.apps.main.views.NavAPIView object at 0x7f4e7a751128>，'NavAPIView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+ERROR 2018-12-01 17:38:54,954 basehttp 124 "GET /navs/ HTTP/1.1" 500 5317
+ERROR 2018-12-01 17:39:25,528 exceptions 15 服务器内部错误： <blog.apps.main.views.NavAPIView object at 0x7fdca660a710>，Field name `__all__` is not valid for model `Nav`.
+ERROR 2018-12-01 17:39:25,560 basehttp 124 "GET /navs/ HTTP/1.1" 500 5260
+INFO 2018-12-01 17:40:59,918 basehttp 124 "GET /navs/ HTTP/1.1" 200 5195
+INFO 2018-12-01 17:41:07,193 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:43:14,127 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:44:34,618 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:44:39,182 basehttp 124 "GET /admin/ HTTP/1.1" 200 5281
+INFO 2018-12-01 17:44:42,147 basehttp 124 "GET /admin/main/nav/ HTTP/1.1" 200 6598
+INFO 2018-12-01 17:44:42,196 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 17:46:19,865 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:46:25,636 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:47:15,043 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:47:15,196 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:47:51,953 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:47:52,427 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:50:19,291 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:50:21,484 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:50:47,205 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:50:47,991 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:51:25,772 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:51:25,971 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:51:37,432 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:51:42,655 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:53:19,491 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:53:19,636 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:53:23,690 basehttp 124 "GET /navs/ HTTP/1.1" 200 46
+INFO 2018-12-01 17:53:47,255 basehttp 124 "GET /navs/ HTTP/1.1" 200 47
+INFO 2018-12-01 17:53:47,902 basehttp 124 "GET /navs/ HTTP/1.1" 200 47
+INFO 2018-12-01 17:53:58,670 basehttp 124 "GET /navs/ HTTP/1.1" 200 47
+INFO 2018-12-01 17:53:59,101 basehttp 124 "GET /navs/ HTTP/1.1" 200 47
+INFO 2018-12-01 17:54:13,037 basehttp 124 "GET /admin/main/nav/add/ HTTP/1.1" 200 4842
+INFO 2018-12-01 17:54:13,101 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 17:54:23,083 basehttp 124 "POST /admin/main/nav/add/ HTTP/1.1" 302 0
+INFO 2018-12-01 17:54:23,241 basehttp 124 "GET /admin/main/nav/ HTTP/1.1" 200 7119
+INFO 2018-12-01 17:54:23,267 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 17:54:28,485 basehttp 124 "GET /navs/ HTTP/1.1" 200 93
+WARNING 2018-12-01 17:54:40,183 basehttp 124 "GET /user/register/ HTTP/1.1" 405 8100
+INFO 2018-12-01 17:54:40,252 basehttp 124 "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2018-12-01 17:54:40,253 basehttp 124 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2018-12-01 17:54:40,254 basehttp 124 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2018-12-01 17:54:40,254 basehttp 124 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2018-12-01 17:54:40,275 basehttp 124 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2018-12-01 17:54:40,276 basehttp 124 "GET /static/rest_framework/js/jquery-3.3.1.min.js HTTP/1.1" 304 0
+INFO 2018-12-01 17:54:40,276 basehttp 124 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2018-12-01 17:54:40,276 basehttp 124 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2018-12-01 17:54:40,278 basehttp 124 "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2018-12-01 17:54:40,280 basehttp 124 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2018-12-01 17:54:40,305 basehttp 124 "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+INFO 2018-12-01 17:54:45,419 basehttp 124 "GET /navs/ HTTP/1.1" 200 5332
+INFO 2018-12-01 17:55:51,073 basehttp 124 "GET /navs/ HTTP/1.1" 200 93
+INFO 2018-12-01 17:56:36,190 basehttp 124 "GET /navs/ HTTP/1.1" 200 93
+INFO 2018-12-01 18:01:28,980 basehttp 124 "GET /navs/ HTTP/1.1" 200 93
+WARNING 2018-12-01 18:01:34,539 csrf 160 Forbidden (CSRF token missing or incorrect.): /admin/login/
+WARNING 2018-12-01 18:01:34,644 basehttp 124 "POST /admin/login/?next=/admin/ HTTP/1.1" 403 2497
+INFO 2018-12-01 18:01:37,484 basehttp 124 "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2018-12-01 18:01:37,581 basehttp 124 "GET /admin/ HTTP/1.1" 200 5568
+INFO 2018-12-01 18:01:44,619 basehttp 124 "GET /admin/main/carousel/ HTTP/1.1" 200 4264
+INFO 2018-12-01 18:01:44,739 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:01:46,658 basehttp 124 "GET /admin/main/carousel/add/ HTTP/1.1" 200 5922
+INFO 2018-12-01 18:01:46,701 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:02:02,587 basehttp 124 "GET /admin/main/ HTTP/1.1" 200 4155
+INFO 2018-12-01 18:02:07,088 basehttp 124 "GET /admin/main/carousel/ HTTP/1.1" 200 4264
+INFO 2018-12-01 18:02:07,125 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:02:08,596 basehttp 124 "GET /admin/main/carousel/add/ HTTP/1.1" 200 5922
+INFO 2018-12-01 18:02:08,634 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:02:20,686 basehttp 124 "POST /admin/main/carousel/add/ HTTP/1.1" 200 6095
+INFO 2018-12-01 18:02:20,748 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:02:28,831 basehttp 124 "GET /admin/main/ HTTP/1.1" 200 4155
+INFO 2018-12-01 18:02:30,672 basehttp 124 "GET /admin/main/article/ HTTP/1.1" 200 5844
+INFO 2018-12-01 18:02:30,710 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:02:32,617 basehttp 124 "GET /admin/main/article/add/ HTTP/1.1" 200 10979
+INFO 2018-12-01 18:02:32,660 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:02:32,660 basehttp 124 "GET /static/admin/js/calendar.js HTTP/1.1" 200 7790
+INFO 2018-12-01 18:02:32,674 basehttp 124 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 20529
+INFO 2018-12-01 18:02:32,871 basehttp 124 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2018-12-01 18:02:32,874 basehttp 124 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2018-12-01 18:02:48,982 basehttp 124 "GET /admin/main/ HTTP/1.1" 200 4155
+INFO 2018-12-01 18:02:50,898 basehttp 124 "GET /admin/main/category/add/ HTTP/1.1" 200 5934
+INFO 2018-12-01 18:02:50,944 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:02:56,552 basehttp 124 "GET /admin/main/ HTTP/1.1" 200 4155
+INFO 2018-12-01 18:02:59,667 basehttp 124 "GET /admin/main/column/ HTTP/1.1" 200 4584
+INFO 2018-12-01 18:02:59,709 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:03:02,136 basehttp 124 "GET /admin/main/column/add/ HTTP/1.1" 200 6047
+INFO 2018-12-01 18:03:02,162 basehttp 124 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 5755
+INFO 2018-12-01 18:03:02,165 basehttp 124 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 12389
+INFO 2018-12-01 18:03:02,178 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:03:02,295 basehttp 124 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2018-12-01 18:03:02,316 basehttp 124 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2018-12-01 18:03:02,339 basehttp 124 "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+INFO 2018-12-01 18:03:06,616 basehttp 124 "POST /admin/main/column/add/ HTTP/1.1" 200 6318
+INFO 2018-12-01 18:03:06,649 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:03:08,804 basehttp 124 "GET /admin/main/ HTTP/1.1" 200 4155
+INFO 2018-12-01 18:03:40,609 basehttp 124 "GET /navs/ HTTP/1.1" 200 93
+INFO 2018-12-01 18:03:57,382 basehttp 124 "GET /admin/ HTTP/1.1" 200 5568
+WARNING 2018-12-01 18:03:57,867 base 152 Not Found: /favicon.ico
+WARNING 2018-12-01 18:03:57,871 basehttp 124 "GET /favicon.ico HTTP/1.1" 404 2220
+INFO 2018-12-01 18:04:15,120 basehttp 124 "GET /admin/main/article/ HTTP/1.1" 200 5844
+INFO 2018-12-01 18:04:15,148 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:04:17,489 basehttp 124 "GET /admin/main/article/add/ HTTP/1.1" 200 10979
+INFO 2018-12-01 18:04:17,519 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:04:24,602 basehttp 124 "GET /admin/main/ HTTP/1.1" 200 4155
+INFO 2018-12-01 18:08:07,643 basehttp 124 "GET /admin/main/article/ HTTP/1.1" 200 5844
+INFO 2018-12-01 18:08:07,675 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:08:10,808 basehttp 124 "GET /admin/main/article/add/ HTTP/1.1" 200 10979
+INFO 2018-12-01 18:08:10,847 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 18:10:49,131 basehttp 124 "GET /navs/ HTTP/1.1" 200 93
+INFO 2018-12-01 20:09:34,171 basehttp 124 "GET /navs/ HTTP/1.1" 200 93
+INFO 2018-12-01 20:11:10,150 basehttp 124 "GET /admin/main/ HTTP/1.1" 200 4155
+INFO 2018-12-01 20:11:13,992 basehttp 124 "GET /admin/main/category/ HTTP/1.1" 200 4588
+INFO 2018-12-01 20:11:14,301 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 20:11:17,706 basehttp 124 "GET /admin/main/category/add/ HTTP/1.1" 200 5934
+INFO 2018-12-01 20:11:17,940 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 20:12:09,374 basehttp 124 "GET /navs/ HTTP/1.1" 200 93
+INFO 2018-12-01 20:12:35,912 basehttp 124 "GET /admin/main/ HTTP/1.1" 200 4155
+INFO 2018-12-01 20:12:39,062 basehttp 124 "GET /admin/main/nav/ HTTP/1.1" 200 6948
+INFO 2018-12-01 20:12:39,126 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 20:12:55,193 basehttp 124 "GET /admin/ HTTP/1.1" 200 5568
+INFO 2018-12-01 20:14:19,925 basehttp 124 "GET /admin/main/category/ HTTP/1.1" 200 4588
+INFO 2018-12-01 20:14:19,965 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 20:14:22,095 basehttp 124 "GET /admin/main/category/add/ HTTP/1.1" 200 5934
+INFO 2018-12-01 20:14:22,130 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 20:14:29,508 basehttp 124 "POST /admin/main/category/add/ HTTP/1.1" 302 0
+INFO 2018-12-01 20:14:29,663 basehttp 124 "GET /admin/main/category/ HTTP/1.1" 200 6712
+INFO 2018-12-01 20:14:29,747 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 20:14:31,851 basehttp 124 "GET /admin/main/category/add/ HTTP/1.1" 200 5980
+INFO 2018-12-01 20:14:31,891 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 20:14:40,897 basehttp 124 "POST /admin/main/category/add/ HTTP/1.1" 302 0
+INFO 2018-12-01 20:14:41,036 basehttp 124 "GET /admin/main/category/ HTTP/1.1" 200 7033
+INFO 2018-12-01 20:14:41,123 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 20:14:43,037 basehttp 124 "GET /admin/main/ HTTP/1.1" 200 4155
+INFO 2018-12-01 20:14:44,772 basehttp 124 "GET /admin/main/article/ HTTP/1.1" 200 6144
+INFO 2018-12-01 20:14:44,802 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 20:14:46,746 basehttp 124 "GET /admin/main/article/add/ HTTP/1.1" 200 11071
+INFO 2018-12-01 20:14:46,782 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 20:29:15,367 basehttp 124 "POST /admin/main/article/add/ HTTP/1.1" 200 22029
+INFO 2018-12-01 20:29:15,440 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 20:29:27,628 basehttp 124 "POST /admin/main/article/add/ HTTP/1.1" 302 0
+INFO 2018-12-01 20:29:27,760 basehttp 124 "GET /admin/main/article/ HTTP/1.1" 200 8778
+INFO 2018-12-01 20:29:27,826 basehttp 124 "GET /admin/jsi18n/ HTTP/1.1" 200 7682
+INFO 2018-12-01 20:29:27,864 basehttp 124 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2018-12-01 20:29:34,284 basehttp 124 "GET /admin/main/ HTTP/1.1" 200 4155

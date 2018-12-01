@@ -50,21 +50,21 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/all">
+                            <a href="/all.html">
                                 <span class="glyphicon glyphicon-globe"></span>
                                 全部文章
                             </a>
                         </li>
                         <li>
-                            <a href="/news">
+                            <a href="/news.html">
                                 <span class="glyphicon glyphicon-star-empty"></span>
                                 新闻
                             </a>
                         </li>
-                        <li>
-                            <a href="/python">
+                        <li v-for="nav in navs">
+                            <a :href="nav.url" :id="nav.id">
                                 <!-- <span class="glyphicon glyphicon-star-empty"></span> -->
-                                python
+                                [[ nav.name ]]
                             </a>
                         </li>
                     </ul>
@@ -123,20 +123,23 @@
                            用户登陆
                         </h4>
                     </div>
+                    <div class="alert alert-danger" v-show="error_username">请填写用户名<br></div>
+                    <div class="alert alert-danger" v-show="error_pwd">请填写密码<br></div>
+                    <div class="alert alert-danger" v-show="error_login">[[ error_msg ]]<br></div>
                     <div class="modal-body clearfix">
                         <form id="login-form" class="form-horizontal" @submit.prevent="on_submit"> 
                             <div class="form-group">
                                 <label for="login-username" class="col-sm-2 control-label">用户名</label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" id="login-username" 
-                                    placeholder="请输入用户名" v-model="loginusername" @blur="check_username">
+                                    placeholder="请输入用户名" v-model="login_username" @blur="check_username">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="login-password" class="col-sm-2 control-label">密码</label>
                                 <div class="col-sm-6">
                                     <input type="password" class="form-control" id="login-password" 
-                                    placeholder="请输入密码" v-model="password" @blur="check_pwd">
+                                    placeholder="请输入密码" v-model="login_password" @blur="check_pwd">
                                 </div>
                             </div>
                             <button id="login-button" type="submit" class="btn btn-primary" @click="">
@@ -162,29 +165,29 @@
                            用户注册
                         </h4>
                     </div>
-        
+                    <div class="alert alert-danger" v-show="error_register">[[error_register_msg]]<br></div>
                     <div class="modal-body clearfix">
-                        <form id="register-form" class="form-horizontal" method="post" role="form"> 
+                        <form id="register-form" class="form-horizontal" @submit.prevent="register">
                             <!-- {% csrf_token %} -->
                             <div class="form-group">
                                 <label for="register-username" class="col-sm-2 control-label">用户名</label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" id="register-username" 
-                                    placeholder="请输入用户名">
+                                    placeholder="请输入用户名" v-model="register_username">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="register-email" class="col-sm-2 control-label">email</label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" id="register-email" 
-                                    placeholder="请输入email">
+                                    placeholder="请输入email" v-model="register_email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="register-password-1" class="col-sm-2 control-label">密码</label>
                                 <div class="col-sm-6">
                                     <input type="password" class="form-control" id="register-password-1" 
-                                    placeholder="请输入密码">
+                                    placeholder="请输入密码" v-model="register_password">
                                 </div>
                             </div>
         
@@ -192,7 +195,7 @@
                                 <label for="register-password-2" class="col-sm-2 control-label">确认密码</label>
                                 <div class="col-sm-6">
                                     <input type="password" class="form-control" id="register-password-2" 
-                                    placeholder="请再次输入密码">
+                                    placeholder="请再次输入密码" v-model="register_password2">
                                 </div>
                             </div>
         
@@ -253,7 +256,7 @@
                                         {% if forloop.first%} -->
                                         <div class="item active">
                                             <a href="1.html">
-                                                <img src="./static/img/linux-carousel.jpg" alt="">
+                                                <img src="http://pj06jakc6.bkt.clouddn.com/linux-carousel.jpg" alt="">
                                                 <div class="carousel-caption">
                                                     <!-- <h4>{{carousel_page.title}}</h4>
                                                     {% autoescape off%}

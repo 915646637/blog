@@ -40,13 +40,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'corsheaders',
 
     # 应用
-    'passport.apps.PassportConfig'
+    'passport.apps.PassportConfig',
+    'main.apps.MainConfig',
 
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -194,7 +197,14 @@ LOGGING = {
 }
 
 REST_FRAMEWORK = {
-    'EXCEPTION_HANDLER': 'meiduo_mall.utils.exceptions.custom_exception_handler',
+    'EXCEPTION_HANDLER': 'blog.utils.exceptions.custom_exception_handler',
 }
 
 AUTH_USER_MODEL = 'passport.User'
+
+CORS_ORIGIN_WHITELIST = (
+            '127.0.0.1:8080',
+            'localhost:8080',
+
+        )
+CORS_ALLOW_CREDENTIALS = True

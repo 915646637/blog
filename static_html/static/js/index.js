@@ -3,74 +3,135 @@ var vm = new Vue({
     // 声明vue变量使用[[语法
     delimiters: ['[[', ']]'],
     data: {
-        host:"127.0.0.1",
+        host:"http://127.0.0.1:8000/",
         username: sessionStorage.username || localStorage.username,
         user_id: sessionStorage.user_id || localStorage.user_id,
-        token: sessionStorage.token || localStorage.token,
-        loginusername:'',
-        password:'',
+        login_username:'',
+        login_password:'',
         error_username: false,
         error_pwd: false,
+        error_login:false,
+        error_msg:"",
+
+        register_username:'',
+        register_password:'',
+        register_password2:'',
+        register_email:'',
+        error_register:false,
+        error_register_msg:"",
+
+        navs:"",
+
     },
-    // mounted: function(){
-    //     this.get_cart();
-    // },
+    mounted:function(){
+        this.get_navs()
+    },
+
     methods: {
-        // 退出
+        get_navs:function () {
+            axios.get(this.host+'navs/', {
+                }, {
+                    responseType: 'json',
+                    withCredentials: true
+                })
+                .then(response => {
+                    this.navs = response.data
+                })
+                .catch(error => {
+                    alert("服务器内部错误")
+                })
+        },
+
+        get_csrf_token:function () {
+          csrf_cookie = document.cookie.split("=")
+          return csrf_cookie[1]
+        },
+
         check_username: function(){
-            if (!this.loginusername) {
+            if (!this.login_username) {
                 this.error_username = true;
             } else {
                 this.error_username = false;
+                this.error_login = false;
             }
         },
         check_pwd: function(){
-            if (!this.password) {
+            if (!this.login_password) {
                 this.error_pwd_message = '请填写密码';
                 this.error_pwd = true;
             } else {
                 this.error_pwd = false;
+                this.error_login = false;
             }
         },
+
         on_submit: function(){
             this.check_username();
             this.check_pwd();
 
             if (this.error_username == false && this.error_pwd == false) {
-                axios.post(this.host+'/authorizations/', {
-                        username: this.loginusername,
-                        password: this.password
+                axios.post(this.host+'user/login/', {
+                        username: this.login_username,
+                        password: this.login_password,
                     }, {
                         responseType: 'json',
                         withCredentials: true
                     })
                     .then(response => {
-                        // 使用浏览器本地存储保存token
-                            // 记住登录
-                        sessionStorage.clear();
-                        localStorage.token = response.data.token;
-                        localStorage.user_id = response.data.user_id;
                         localStorage.username = response.data.username;
                         // 跳转页面
-                        var return_url = this.get_query_string('next');
-                        if (!return_url) {
-                            return_url = '/index.html';
-                        }
+                        return_url = '/index.html';
                         location.href = return_url;
                     })
                     .catch(error => {
-                        this.error_pwd = true;
+                        this.error_login=true
+                        this.error_msg = error.response.data.error
                     })
             }
         },
-        logout: function(){
-            sessionStorage.clear();
-            localStorage.clear();
-            location.href = '/login.html';
-        },
-        // 获取购物车数据
-        // get_cart: function(){
+        register: function () {
 
-        // }
+            axios.post(this.host+'user/register/', {
+                    username: this.register_username,
+                    password: this.register_password,
+                    password2: this.register_password2,
+                    email: this.register_email,
+                }, {
+                    responseType: 'json',
+                    withCredentials: true
+                })
+                .then(response => {
+                    // 使用浏览器本地存储保存token
+                    localStorage.username = response.data.username;
+                    // 跳转页面
+                    return_url = '/index.html';
+                    location.href = return_url;
+                })
+                .catch(error => {
+                    this.error_register = true;
+                    this.error_register_msg = "数据错误"
+                })
+            // }
+        },
+        logout: function(){
+            axios.post(this.host+'user/logout/', {
+                },
+                {
+                    responseType: 'json',
+                    withCredentials: true,
+                    headers: {
+                        'X-CSRFToken': this.get_csrf_token()
+                    }
+                })
+                .then(response => {
+                    localStorage.clear();
+                    // 跳转页面
+                    return_url = '/index.html';
+                    location.href = return_url;
+                })
+                .catch(error => {
+                    alert("服务器内部错误")
+                })
+        },
     }
 });

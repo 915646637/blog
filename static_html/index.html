@@ -245,7 +245,7 @@
                                 <!-- 轮播（Carousel）项目 -->
                                 <div class="carousel-inner">
                                         <div :class="index==0 ? 'item active' : 'item'" v-for="carousel,index in carouselLIst">
-                                            <a href="1.html">
+                                            <a href="article/Django/1.html">
                                                 <img :src="carousel.img" alt="">
                                                 <div class="carousel-caption">
                                                     <h4>[[ carousel.summary ]]</h4>
@@ -281,7 +281,7 @@
                                         </div>
                                     </a>
                                     <h1>
-                                        <a href="/article/vmaig_blog.html">[[ article.title ]]</a>
+                                        <a :href="'article/'+[[article.category]]+'/'+[[article.id]]+'.html'">[[ article.title ]]</a>
                                     </h1>
                                     <div class="post-info">
                                         <span>
@@ -318,7 +318,7 @@
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <figure class="thumbnail">
-                                                <a href="/article/vmaig_blog.html">
+                                                <a :href="'article/'+[[article.category]]+'/'+[[article.id]]+'.html'">
                                                     <img src="./static/img/linux-article.jpg" height="300" alt="">
                                                 </a>
                                             </figure>
@@ -329,7 +329,7 @@
                                             </p><p>[[ article.summary ]]
                                             
                                             </p>
-                                            <a type="button" class="btn btn-vmaig pull-right hidden-xs" href="/article/vmaig_blog.html">阅读全文</a>
+                                            <a type="button" class="btn btn-vmaig pull-right hidden-xs" :href="'article/'+[[article.category]]+'/'+[[article.id]]+'.html'">阅读全文</a>
                             
                                         </div>
                                     </div>

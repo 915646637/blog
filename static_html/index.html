@@ -168,7 +168,6 @@
                     <div class="alert alert-danger" v-show="error_register">[[error_register_msg]]<br></div>
                     <div class="modal-body clearfix">
                         <form id="register-form" class="form-horizontal" @submit.prevent="register">
-                            <!-- {% csrf_token %} -->
                             <div class="form-group">
                                 <label for="register-username" class="col-sm-2 control-label">用户名</label>
                                 <div class="col-sm-6">
@@ -241,44 +240,21 @@
                             <!-- 首页轮播 -->
                             <div id="myCarousel" class="carousel slide clearfix" >
                                 <ol class="carousel-indicators">
-                                    <!-- {% for carousel_page in carousel_page_list %}
-                                        {% if forloop.first%} -->
-                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                        <!-- {% else %}
-                                            <li data-target="#myCarousel" data-slide-to="{{forloop.counter0}}"></li>
-                                        {% endif%}
-                                        
-                                    {% endfor %} -->
+                                    <li data-target="#myCarousel" :data-slide-to="index" :class="index==0 ? 'active' : ''" v-for="carousel,index in carouselLIst"></li>
                                 </ol>   
                                 <!-- 轮播（Carousel）项目 -->
                                 <div class="carousel-inner">
-                                    <!-- {% for carousel_page in carousel_page_list %}
-                                        {% if forloop.first%} -->
-                                        <div class="item active">
+                                        <div :class="index==0 ? 'item active' : 'item'" v-for="carousel,index in carouselLIst">
                                             <a href="1.html">
-                                                <img src="http://pj06jakc6.bkt.clouddn.com/linux-carousel.jpg" alt="">
+                                                <img :src="carousel.img" alt="">
                                                 <div class="carousel-caption">
-                                                    <!-- <h4>{{carousel_page.title}}</h4>
-                                                    {% autoescape off%}
-                                                    {{carousel_page.summary}}
-                                                    {% endautoescape %} -->
+                                                    <h4>[[ carousel.summary ]]</h4>
                                                 </div>
                                             </a>
                                         </div>
-                                        <!-- {% else %}
-                                        <div class="item">
-                                            <a href="/article/{{carousel_page.article.en_title}}.html">
-                                                <img src="{{carousel_page.img}}" alt="{{carousel_page.title}}">
-                                                <div class="carousel-caption">
-                                                    <h4>{{carousel_page.title}}</h4>
-                                                    {% autoescape off%}
-                                                    {{carousel_page.summary}}
-                                                    {% endautoescape %}
-                                                </div>
-                                            </a>
-                                        </div>
-                                        {% endif%}
-                                    {% endfor %} -->
+
+
+
                                 </div>
                                 <!-- 轮播（Carousel）导航 -->
                                 <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -293,32 +269,32 @@
                          
                 
                             <!--首页文章列表 -->
-                            <div class="home-post well clearfix">
+                            <div class="home-post well clearfix" v-for="article in articleList.results">
                                 <div class="post-title underline clearfix">
                                     <a href="/category/django/">
                                         <div class="pre-cat">
                                             <div class="pre-catinner btn">
-                                                django
+                                                [[ article.category ]]
                                             </div>
                                             <div class="pre-catarrow">
                                             </div>
                                         </div>
                                     </a>
                                     <h1>
-                                        <a href="/article/vmaig_blog.html">本网站开源喽~~基于Django，Bootstrap</a>
+                                        <a href="/article/vmaig_blog.html">[[ article.title ]]</a>
                                     </h1>
                                     <div class="post-info">
                                         <span>
                                             <span class="glyphicon glyphicon-calendar"></span>
-                                            2015-05-15
+                                            [[ article.create_time ]]
                                         </span>
                                         <span>
                                             <span class="glyphicon glyphicon-comment"></span>
-                                            122
+                                            [[ article.zan_times ]]
                                         </span>
                                         <span>
                                             <span class="glyphicon glyphicon-eye-open"></span>
-                                            12965
+                                            [[ article.view_times ]]
                                         </span>
                                         <div class="post-tags">
                                             
@@ -350,10 +326,7 @@
                                         <div class="col-sm-8">
                                             <p>
                                             
-                                            </p><p>更新日志 2015/5/15 从django1.6 升级到 django1.8 (git中还保留django1.6 分支) 概述 vmaig_blog 是一个基于 Django1.8 跟 Bootstrap3 开发的 博客系统 ，实现了一个博客完整的功能。 http://vmaig.com 就是基于vmaig_blog 搭建的。 实现功能 1. 文章,分类,专栏的添加，删除，修改。支持tin
-                                            
-                                            
-                                                ...
+                                            </p><p>[[ article.summary ]]
                                             
                                             </p>
                                             <a type="button" class="btn btn-vmaig pull-right hidden-xs" href="/article/vmaig_blog.html">阅读全文</a>
@@ -366,27 +339,21 @@
                 
                             <!-- 分页 -->
                             <ul class="pager">
-                                <!-- {% if  page_obj.has_previous %} -->
-                                    <li class="previous">
-                                        <a href="?page=1">&larr; 上一页</a>
-                                    </li>
-                                <!-- {% else %} -->
-                                    <!-- <li class="previous disabled">
-                                        <a>&larr; 上一页</a>
-                                    </li>
-                                {% endif %} -->
-                            
+                                <li class="previous" v-if="articleList.previous">
+                                    <a :href="articleList.previous" >&larr; 上一页</a>
+                                </li>
+                                <li class="previous disabled" v-else>
+                                    <a >&larr; 上一页</a>
+                                </li>
+
                                 <li class="page-number">1/1</li>
-                            
-                                <!-- {% if  page_obj.has_next%}
-                                    <li class="next">
-                                        <a href="?page={{page_obj.next_page_number}}">下一页 &rarr;</a>
-                                    </li>
-                                {% else %} -->
-                                    <li class="next disabled">
-                                        <a>下一页 &rarr;</a>
-                                    </li>
-                                <!-- {% endif %} -->
+
+                                <li class="next" v-if="articleList.next">
+                                    <a :href="articleList.next" >下一页 &rarr;</a>
+                                </li>
+                                <li class="next disabled" v-else>
+                                    <a>下一页 &rarr;</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -422,9 +389,9 @@
                                         </h3>
                                     </div>
                                     <ul id="hotest-post-list" class="list-group collapse in">
-                                            <li class="list-group-item">
-                                            <span class="hotest-post-title"><a href="/article/2.html">占用</a> </span>
-                                            <span class="badge">123</span>
+                                            <li class="list-group-item" v-for="hostarticle in hostarticleList">
+                                            <span class="hotest-post-title"><a href="/article/2.html">[[ hostarticle.title ]]</a> </span>
+                                            <span class="badge">[[ hostarticle.view_times ]]</span>
                                             </li>
                                     </ul>
                                 </div>

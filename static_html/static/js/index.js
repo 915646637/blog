@@ -21,13 +21,58 @@ var vm = new Vue({
         error_register_msg:"",
 
         navs:"",
+        articleList:"",
+        hostarticleList:"",
+        carouselLIst:"",
 
     },
     mounted:function(){
-        this.get_navs()
+        this.get_navs();
+        this.get_articleList();
+        this.get_hostarticleList();
+        this.get_carouselLIstList();
     },
 
     methods: {
+        get_carouselLIstList:function () {
+            axios.get(this.host + "carouselLIstList/", {}, {
+                responseType: 'json',
+                withCredentials: true
+            })
+                .then(response => {
+                    this.carouselLIst = response.data
+                })
+                .catch(error => {
+                    alert("服务器内部错误")
+                })
+
+        },
+        get_hostarticleList:function () {
+            axios.get(this.host + "hostArticleLists/", {}, {
+                responseType: 'json',
+                withCredentials: true
+            })
+                .then(response => {
+                    this.hostarticleList = response.data
+                })
+                .catch(error => {
+                    alert("服务器内部错误")
+                })
+
+        },
+        get_articleList:function () {
+            axios.get(this.host + "articleLists/", {}, {
+                responseType: 'json',
+                withCredentials: true
+            })
+                .then(response => {
+                    this.articleList = response.data
+                })
+                .catch(error => {
+                    alert("服务器内部错误")
+                })
+
+        },
         get_navs:function () {
             axios.get(this.host+'navs/', {
                 }, {

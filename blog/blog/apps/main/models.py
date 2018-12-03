@@ -2,18 +2,6 @@
 from django.db import models
 from django.conf import settings
 
-# 用来修改admin中显示的app名称,因为admin app 名称是用 str.title()显示的,所以修改str类的title方法就可以实现.
-# class string_with_title(str):
-#     def __new__(cls, value, title):
-#         instance = str.__new__(cls, value)
-#         instance._title = title
-#         return instance
-#
-#     def title(self):
-#         return self._title
-#
-#     __copy__ = lambda self: self
-#     __deepcopy__ = lambda self, memodict: self
 
 
 # Create your models here.
@@ -43,9 +31,8 @@ class Nav(models.Model):
         db_table = "tb_nav"
         verbose_name_plural = verbose_name = u"导航条"
         ordering = ['create_time']
-        # app_label = string_with_title('blog', u"博客管理")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -61,13 +48,9 @@ class Category(models.Model):
         db_table = "tb_category"
         verbose_name_plural = verbose_name = u'分类'
         ordering = ['rank', '-create_time']
-        # app_label = string_with_title('blog', u"博客管理")
 
-    def __unicode__(self):
-        if self.parent:
-            return '%s-->%s' % (self.parent, self.name)
-        else:
-            return '%s' % (self.name)
+    def __str__(self):
+        return self.name
 
 
 class Article(models.Model):
@@ -98,9 +81,8 @@ class Article(models.Model):
         db_table = 'tb_Article'
         verbose_name_plural = verbose_name = u'文章'
         ordering = ['rank', '-is_top', '-pub_time', '-create_time']
-        # app_label = string_with_title('blog', u"博客管理")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 
@@ -115,9 +97,8 @@ class Column(models.Model):
         db_table = "tb_column"
         verbose_name_plural = verbose_name = u'专栏'
         ordering = ['-create_time']
-        # app_label = string_with_title('blog', u"博客管理")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -132,7 +113,6 @@ class Carousel(models.Model):
         db_table = 'tb_carousel'
         verbose_name_plural = verbose_name = u'轮播'
         ordering = ['-create_time']
-        # app_label = string_with_title('blog', u"博客管理")
 
 
 class News(models.Model):
@@ -148,4 +128,15 @@ class News(models.Model):
         db_table = 'tb_news'
         verbose_name_plural = verbose_name = u'资讯'
         ordering = ['-title']
-        # app_label = string_with_title('blog', u"博客管理")
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,verbose_name=u'用户')
+    article = models.ForeignKey(Article,verbose_name=u'文章')
+    comment = models.TextField(verbose_name=u'评论内容')
+    create_time = models.DateTimeField(u'创建时间',auto_now_add=True)
+
+    class Meta:
+        db_table = "tb_comment"
+        verbose_name_plural = verbose_name = u'评论'
+        ordering = ['-create_time']

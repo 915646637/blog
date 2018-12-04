@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
 
+    'ckeditor',  # 富文本编辑器
+    'ckeditor_uploader',  # 富文本编辑器上传图片模块
+
 
     # 应用
     'passport.apps.PassportConfig',
@@ -224,3 +227,14 @@ qiniu_domainname = "http://pj06jakc6.bkt.clouddn.com/"
 
 DEFAULT_FILE_STORAGE = 'blog.utils.image_storage.QiniuStorage'
 
+# # 富文本编辑器ckeditor配置
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',  # 工具条功能
+        'height': 300,  # 编辑器高度
+        # 'width': 300,  # 编辑器宽
+    },
+}
+
+# 上传图片保存路径
+CKEDITOR_UPLOAD_PATH = ''

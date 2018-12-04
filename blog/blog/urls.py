@@ -21,6 +21,7 @@ from blog.apps.main import urls as mainurls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^user/', include(passporturls)),
     url(r'^', include(mainurls)),
 ]

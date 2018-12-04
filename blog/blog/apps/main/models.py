@@ -1,6 +1,7 @@
 # coding:utf-8
 from django.db import models
 from django.conf import settings
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 
@@ -62,7 +63,7 @@ class Article(models.Model):
     img = models.ImageField(default='/static/img/article/default.jpg')
     tags = models.CharField(max_length=200, null=True, blank=True, verbose_name=u'标签', help_text=u'用逗号分隔')
     summary = models.TextField(verbose_name=u'摘要')
-    content = models.TextField(verbose_name=u'正文')
+    content = RichTextUploadingField(verbose_name=u'正文')
 
     view_times = models.IntegerField(default=0)
     zan_times = models.IntegerField(default=0)

@@ -61,7 +61,6 @@ class Article(models.Model):
     en_title = models.CharField(max_length=100, verbose_name=u'英文标题')
     # img = models.CharField(max_length=200, default='/static/img/article/default.jpg')
     img = models.ImageField(default='/static/img/article/default.jpg')
-    tags = models.CharField(max_length=200, null=True, blank=True, verbose_name=u'标签', help_text=u'用逗号分隔')
     summary = models.TextField(verbose_name=u'摘要')
     content = RichTextUploadingField(verbose_name=u'正文')
 
@@ -76,8 +75,6 @@ class Article(models.Model):
     create_time = models.DateTimeField(u'创建时间', auto_now_add=True)
     update_time = models.DateTimeField(u'更新时间', auto_now=True)
 
-    def get_tags(self):
-        return self.tags.split(',')
 
     class Meta:
         db_table = 'tb_Article'

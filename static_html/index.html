@@ -296,21 +296,6 @@
                                             <span class="glyphicon glyphicon-eye-open"></span>
                                             [[ article.view_times ]]
                                         </span>
-                                        <div class="post-tags">
-                                            
-                                            <a href="/tag/django/" class=" ">
-                                                <span class="label label-vmaig-1 btn">django</span>
-                                            </a>
-                                            
-                                            <a href="/tag/python/" class="hidden-xs ">
-                                                <span class="label label-vmaig-2 btn">python</span>
-                                            </a>
-                                            
-                                            <a class="visible-xs-inline-block">
-                                                <span class="label label-vmaig-2 btn ">...</span>
-                                            </a>
-                             
-                                        </div>
                             
                                     </div>
                                 </div>
@@ -340,16 +325,16 @@
                             <!-- 分页 -->
                             <ul class="pager">
                                 <li class="previous" v-if="articleList.previous">
-                                    <a :href="articleList.previous" >&larr; 上一页</a>
+                                    <a href="#;" @click="get_previous_page">&larr; 上一页</a>
                                 </li>
                                 <li class="previous disabled" v-else>
                                     <a >&larr; 上一页</a>
                                 </li>
 
-                                <li class="page-number">1/1</li>
+                                <li class="page-number">[[ page ]]/[[ total_page ]]</li>
 
                                 <li class="next" v-if="articleList.next">
-                                    <a :href="articleList.next" >下一页 &rarr;</a>
+                                    <a href="#;" @click="get_next_page">下一页 &rarr;</a>
                                 </li>
                                 <li class="next disabled" v-else>
                                     <a>下一页 &rarr;</a>

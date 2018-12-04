@@ -25,6 +25,11 @@ var vm = new Vue({
         hostarticleList:"",
         carouselLIst:"",
 
+        total_page:"",
+        page:1,
+        next:"",
+        previous:"",
+
     },
     mounted:function(){
         this.get_navs();
@@ -34,6 +39,39 @@ var vm = new Vue({
     },
 
     methods: {
+        get_next_page:function () {
+            axios.get(this.next, {}, {
+                responseType: 'json',
+                withCredentials: true
+            })
+            .then(response => {
+                this.articleList = response.data
+                this.page += 1
+                this.next = response.data.next
+                this.previous = response.data.previous
+                document.documentElement.scrollTop = document.body.scrollTop = 0;
+            })
+            .catch(error => {
+                alert("服务器内部错误")
+            })
+        },
+        get_previous_page:function () {
+            axios.get(this.previous, {}, {
+                responseType: 'json',
+                withCredentials: true
+            })
+            .then(response => {
+                this.articleList = response.data
+                this.page -= 1
+                this.next = response.data.next
+                this.previous = response.data.previous
+                document.documentElement.scrollTop = document.body.scrollTop = 0;
+            })
+            .catch(error => {
+                alert("服务器内部错误")
+            })
+        },
+
         get_carouselLIstList:function () {
             axios.get(this.host + "carouselLIstList/", {}, {
                 responseType: 'json',
@@ -65,12 +103,16 @@ var vm = new Vue({
                 responseType: 'json',
                 withCredentials: true
             })
-                .then(response => {
-                    this.articleList = response.data
-                })
-                .catch(error => {
-                    alert("服务器内部错误")
-                })
+            .then(response => {
+                this.articleList = response.data
+                this.total_page = Math.ceil(response.data.count/5)
+                this.page = 1
+                this.next = response.data.next
+                this.previous = response.data.previous
+            })
+            .catch(error => {
+                alert("服务器内部错误")
+            })
 
         },
         get_navs:function () {

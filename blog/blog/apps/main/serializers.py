@@ -21,9 +21,10 @@ class ArticleListSerializers(serializers.ModelSerializer):
 
 
 class HostArticleSerializers(serializers.ModelSerializer):
+    category = serializers.StringRelatedField()
     class Meta:
         model = Article
-        fields = ("id", "title", "view_times")
+        fields = ("id", "title", "view_times","category")
 
 
 class CarouselLIstSerializers(serializers.ModelSerializer):

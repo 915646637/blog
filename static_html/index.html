@@ -375,7 +375,7 @@
                                     </div>
                                     <ul id="hotest-post-list" class="list-group collapse in">
                                             <li class="list-group-item" v-for="hostarticle in hostarticleList">
-                                            <span class="hotest-post-title"><a href="/article/2.html">[[ hostarticle.title ]]</a> </span>
+                                            <span class="hotest-post-title"><a :href="'article/'+[[hostarticle.category]]+'/'+[[hostarticle.id]]+'.html'">[[ hostarticle.title ]]</a> </span>
                                             <span class="badge">[[ hostarticle.view_times ]]</span>
                                             </li>
                                     </ul>

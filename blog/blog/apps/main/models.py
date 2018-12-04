@@ -58,7 +58,8 @@ class Article(models.Model):
     category = models.ForeignKey(Category, verbose_name=u'分类')
     title = models.CharField(max_length=100, verbose_name=u'标题')
     en_title = models.CharField(max_length=100, verbose_name=u'英文标题')
-    img = models.CharField(max_length=200, default='/static/img/article/default.jpg')
+    # img = models.CharField(max_length=200, default='/static/img/article/default.jpg')
+    img = models.ImageField(default='/static/img/article/default.jpg')
     tags = models.CharField(max_length=200, null=True, blank=True, verbose_name=u'标签', help_text=u'用逗号分隔')
     summary = models.TextField(verbose_name=u'摘要')
     content = models.TextField(verbose_name=u'正文')
@@ -105,7 +106,8 @@ class Column(models.Model):
 class Carousel(models.Model):
     title = models.CharField(max_length=100, verbose_name=u'标题')
     summary = models.TextField(blank=True, null=True, verbose_name=u'摘要')
-    img = models.CharField(max_length=200, verbose_name=u'轮播图片', default='/static/img/carousel/default.jpg')
+    # img = models.CharField(max_length=200, verbose_name=u'轮播图片', default='/static/img/carousel/default.jpg')
+    img = models.ImageField(max_length=200, verbose_name=u'轮播图片', default='/static/img/carousel/default.jpg')
     article = models.ForeignKey(Article, verbose_name=u'文章')
     create_time = models.DateTimeField(u'创建时间', auto_now_add=True)
 

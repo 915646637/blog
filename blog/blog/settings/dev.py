@@ -209,3 +209,18 @@ CORS_ORIGIN_WHITELIST = (
 
         )
 CORS_ALLOW_CREDENTIALS = True
+GENERATED_STATIC_HTML_FILES_DIR = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)), 'static_html')
+
+# 七牛云密钥
+access_key = 'FHDIxfImsHlruc874F_PXyOdQECSnUqNMXn3w6Mb'
+secret_key = 'J4YSU8Uft2ApIlGLmbUG1Syi2Y3ZwS4Xj7rKsKjE'
+
+# 存储位置
+bucket_name = 'blog'
+
+# 七牛云域名
+
+qiniu_domainname = "http://pj06jakc6.bkt.clouddn.com/"
+
+DEFAULT_FILE_STORAGE = 'blog.utils.image_storage.QiniuStorage'
+

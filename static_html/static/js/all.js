@@ -93,6 +93,7 @@ var vm = new Vue({
                     alert("服务器内部错误")
                 })
         },
+
         get_filter_articleList(e){
             e.preventDefault()
             if(e.target.control){

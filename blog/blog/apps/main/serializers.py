@@ -1,7 +1,7 @@
 from django.contrib.auth import login
 from rest_framework import serializers
 
-from main.models import Nav, Article, Carousel
+from main.models import Nav, Article, Carousel, Category
 from passport.models import User
 
 
@@ -31,3 +31,10 @@ class CarouselLIstSerializers(serializers.ModelSerializer):
     class Meta:
         model = Carousel
         fields = ("id", "summary", "img", "article")
+
+
+class CategorySerializers(serializers.ModelSerializer):
+
+    class Meta:
+        model = Category
+        fields = ("id","name")

@@ -21,94 +21,59 @@ var vm = new Vue({
         error_register_msg:"",
 
         navs:"",
-        articleList:"",
         hostarticleList:"",
-        carouselLIst:"",
-
-        total_page:"",
-        page:1,
-        next:"",
-        previous:"",
+        category_list:"",
+        articleList:"",
+        category:"all",
+        page:1
 
     },
     mounted:function(){
         this.get_navs();
         this.get_articleList();
         this.get_hostarticleList();
-        this.get_carouselLIstList();
+        this.get_category_list();
     },
 
     methods: {
-        get_next_page:function () {
-            axios.get(this.next, {}, {
+        get_category_list:function () {
+            axios.get(this.host + "categoryLists/", {}, {
                 responseType: 'json',
                 withCredentials: true
             })
             .then(response => {
-                this.articleList = response.data
-                this.page += 1
-                this.next = response.data.next
-                this.previous = response.data.previous
-                document.documentElement.scrollTop = document.body.scrollTop = 0;
+                this.category_list = response.data
             })
             .catch(error => {
                 alert("服务器内部错误")
             })
         },
-        get_previous_page:function () {
-            axios.get(this.previous, {}, {
+        get_articleList:function () {
+            axios.get(this.host + "articleLists/", {
+                params:{
+                    category:this.category,
+                    page:this.page
+                }
+            }, {
                 responseType: 'json',
                 withCredentials: true
             })
             .then(response => {
                 this.articleList = response.data
-                this.page -= 1
-                this.next = response.data.next
-                this.previous = response.data.previous
-                document.documentElement.scrollTop = document.body.scrollTop = 0;
-            })
-            .catch(error => {
-                alert("服务器内部错误")
-            })
-        },
-
-        get_carouselLIstList:function () {
-            axios.get(this.host + "carouselLIstList/", {}, {
-                responseType: 'json',
-                withCredentials: true
-            })
-            .then(response => {
-                this.carouselLIst = response.data
             })
             .catch(error => {
                 alert("服务器内部错误")
             })
 
         },
+
         get_hostarticleList:function () {
             axios.get(this.host + "hostArticleLists/", {}, {
                 responseType: 'json',
                 withCredentials: true
             })
-                .then(response => {
-                    this.hostarticleList = response.data
-                })
-                .catch(error => {
-                    alert("服务器内部错误")
-                })
-
-        },
-        get_articleList:function () {
-            axios.get(this.host + "articleLists/", {}, {
-                responseType: 'json',
-                withCredentials: true
-            })
             .then(response => {
-                this.articleList = response.data
-                this.total_page = Math.ceil(response.data.count/5)
-                this.page = 1
-                this.next = response.data.next
-                this.previous = response.data.previous
+                this.hostarticleList = response.data
             })
             .catch(error => {
                 alert("服务器内部错误")
@@ -127,6 +92,19 @@ var vm = new Vue({
                 .catch(error => {
                     alert("服务器内部错误")
                 })
+        },
+
+        get_filter_articleList(e){
+            e.preventDefault()
+            if(e.target.control){
+                for (i = 0; i < e.currentTarget.children.length; i++) {
+                    e.currentTarget.children[i].className='';
+                }
+                this.category = e.target.control.defaultValue;
+                this.page = 1;
+                this.get_articleList();
+                e.target.className="active";
+            }
         },
 
         get_csrf_token:function () {

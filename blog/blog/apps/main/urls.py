@@ -19,7 +19,8 @@ from . import views
 
 urlpatterns = [
     url(r'navs/$', views.NavAPIView.as_view()),
-    url(r'articleLists/$', views.ArticleListAPIView.as_view()),
+    url(r'articleLists/(.*)$', views.ArticleListAPIView.as_view()),
     url(r'hostArticleLists/$', views.HostArticleAPIView.as_view()),
-    url(r'carouselLIstList/$', views.CarouselList.as_view()),
+    url(r'carouselLIstList/$', views.CarouselListAPIView.as_view()),
+    url(r'categoryLists/$', views.CategoryListsAPIView.as_view()),
 ]

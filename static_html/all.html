@@ -302,8 +302,12 @@
 
 
                         </div>
-                        <button id="all-post-more" type="button" class="btn btn-vmaig" value="all" style="width:100%">
+                        <button id="all-post-more" type="button" class="btn btn-vmaig" value="all" style="width:100%" @click="next_article" v-if="close">
                         加载更多
+                        <span class="glyphicon glyphicon-menu-down"></span>
+                        </button>
+                        <button id="all-post-more" type="button" class="btn btn-vmaig" value="all" style="width:100%" v-else>
+                        没有更多了哦
                         <span class="glyphicon glyphicon-menu-down"></span>
                         </button>
 

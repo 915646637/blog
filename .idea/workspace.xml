@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="67fd091e-3623-4591-9566-c4a405c7697c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/blog/apps/main/models.py" afterPath="$PROJECT_DIR$/blog/blog/apps/main/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/blog/apps/main/serializers.py" afterPath="$PROJECT_DIR$/blog/blog/apps/main/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/blog/apps/main/urls.py" afterPath="$PROJECT_DIR$/blog/blog/apps/main/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/blog/apps/main/views.py" afterPath="$PROJECT_DIR$/blog/blog/apps/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/logs/meiduo.log" afterPath="$PROJECT_DIR$/blog/logs/meiduo.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_html/all.html" afterPath="$PROJECT_DIR$/static_html/all.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_html/index.html" afterPath="$PROJECT_DIR$/static_html/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_html/static/js/all.js" afterPath="$PROJECT_DIR$/static_html/static/js/all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_html/static/js/index.js" afterPath="$PROJECT_DIR$/static_html/static/js/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -87,21 +81,24 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="all.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="all.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/static_html/all.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="258">
-                  <caret line="250" column="69" lean-forward="true" selection-start-line="250" selection-start-column="69" selection-end-line="250" selection-end-column="69" />
-                  <folding />
+                <state relative-caret-position="993">
+                  <caret line="309" column="30" lean-forward="false" selection-start-line="309" selection-start-column="30" selection-end-line="309" selection-end-column="30" />
+                  <folding>
+                    <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="all.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="all.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/static_html/static/js/all.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="108" column="10" lean-forward="true" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
+                <state relative-caret-position="466">
+                  <caret line="65" column="17" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -257,13 +254,13 @@
         <option value="$PROJECT_DIR$/blog/blog/urls.py" />
         <option value="$PROJECT_DIR$/blog/blog/templates/deteil.html" />
         <option value="$PROJECT_DIR$/static_html/static/js/index.js" />
-        <option value="$PROJECT_DIR$/static_html/static/js/all.js" />
         <option value="$PROJECT_DIR$/blog/blog/apps/main/models.py" />
         <option value="$PROJECT_DIR$/blog/blog/apps/main/serializers.py" />
         <option value="$PROJECT_DIR$/blog/blog/apps/main/urls.py" />
         <option value="$PROJECT_DIR$/blog/blog/apps/main/views.py" />
         <option value="$PROJECT_DIR$/static_html/index.html" />
         <option value="$PROJECT_DIR$/static_html/all.html" />
+        <option value="$PROJECT_DIR$/static_html/static/js/all.js" />
       </list>
     </option>
   </component>
@@ -886,7 +883,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544981030076</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="３种排序显示">
+      <created>1545063278640</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1545063278640</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -900,7 +904,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16105902" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882413" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -913,7 +917,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4224766" sideWeight="0.49806523" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40166494" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40166494" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -959,7 +963,8 @@
     <MESSAGE value="删除tags,配置下一页和上一页文章内容" />
     <MESSAGE value="修复热门文章ａ链接" />
     <MESSAGE value="所有文章分类过滤展示" />
-    <option name="LAST_COMMIT_MESSAGE" value="所有文章分类过滤展示" />
+    <MESSAGE value="３种排序显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="３种排序显示" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1321,14 +1326,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static_html/static/js/all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="108" column="10" lean-forward="true" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static_html/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -1347,8 +1344,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static_html/all.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="250" column="69" lean-forward="true" selection-start-line="250" selection-start-column="69" selection-end-line="250" selection-end-column="69" />
+        <state relative-caret-position="993">
+          <caret line="309" column="30" lean-forward="false" selection-start-line="309" selection-start-column="30" selection-end-line="309" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static_html/static/js/all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="65" column="17" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
           <folding />
         </state>
       </provider>

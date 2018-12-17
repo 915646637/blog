@@ -26,7 +26,8 @@ var vm = new Vue({
         articleList:"",
         category:"all",
         page:1,
-        order_by:"create_time"
+        order_by:"create_time",
+        close:true,
     },
     mounted:function(){
         this.get_navs();
@@ -60,6 +61,9 @@ var vm = new Vue({
                 withCredentials: true
             })
             .then(response => {
+                if(response.data.next==null){
+                    this.close=false
+                }
                 this.articleList = response.data
             })
             .catch(error => {
@@ -103,14 +107,38 @@ var vm = new Vue({
                 }
                 this.category = e.target.control.defaultValue;
                 this.page = 1;
+                this.close = true;
                 this.get_articleList();
                 e.target.className="active";
             }
         },
 
+        next_article(e){
+             axios.get(this.host + "articleLists/", {
+                params:{
+                    category:this.category,
+                    page:this.page+1,
+                    order_by:this.order_by
+                }
+            }, {
+                responseType: 'json',
+                withCredentials: true
+            })
+            .then(response => {
+                if(response.data.next==null){
+                    this.close=false
+                }
+                this.articleList.results = this.articleList.results.concat(response.data.results)
+            })
+            .catch(error => {
+                alert("服务器内部错误")
+            })
+        },
+
         get_order_by_articleList(e){
             this.order_by = e.target.defaultValue;
             this.page = 1
+            this.close =true
             this.get_articleList();
         },
 

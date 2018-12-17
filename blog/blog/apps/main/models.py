@@ -64,8 +64,8 @@ class Article(models.Model):
     summary = models.TextField(verbose_name=u'摘要')
     content = RichTextUploadingField(verbose_name=u'正文')
 
-    view_times = models.IntegerField(default=0)
-    zan_times = models.IntegerField(default=0)
+    view_counts = models.IntegerField(default=0)
+    comment_counts = models.IntegerField(default=0)
 
     is_top = models.BooleanField(default=False, verbose_name=u'置顶')
     rank = models.IntegerField(default=0, verbose_name=u'排序')

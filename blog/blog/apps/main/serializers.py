@@ -17,14 +17,14 @@ class ArticleListSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ("id", "category", "title", "img", "summary", "create_time", "view_times", "zan_times")
+        fields = ("id", "category", "title", "img", "summary", "create_time", "view_counts", "comment_counts")
 
 
 class HostArticleSerializers(serializers.ModelSerializer):
     category = serializers.StringRelatedField()
     class Meta:
         model = Article
-        fields = ("id", "title", "view_times","category")
+        fields = ("id", "title", "view_counts","category")
 
 
 class CarouselLIstSerializers(serializers.ModelSerializer):

@@ -231,24 +231,24 @@
                         </div>
                         </div>
                         <div class="well">
-                            <div class="sort">
+                            <div class="sort" @click="get_order_by_articleList">
                                 <label>
-                                    <input type="radio" name="sort" value="time" checked="checked"> 按时间排序
+                                    <input type="radio" name="sort" value="create_time" checked="checked"> 按时间排序
                                 </label>
                                 <label>
-                                    <input type="radio" name="sort" value="recommend"> 按热度排序
+                                    <input type="radio" name="sort" value="view_counts"> 按热度排序
                                 </label>
                                 <label>
-                                    <input type="radio" name="sort" value="comment"> 按评论排序
+                                    <input type="radio" name="sort" value="comment_counts"> 按评论排序
                                 </label>
                             </div>
 
                             <div class="all-post clearfix underline" v-for="article in articleList.results">
                                 <div class="post-title clearfix">
-                                    <a href="/category/django/">
+                                    <a :href="'/category/'+article.category+'/'">
                                         <div class="pre-cat">
                                             <div class="pre-catinner btn">
-                                                django
+                                                [[ article.category ]]
                                             </div>
                                             <div class="pre-catarrow">
                                             </div>
@@ -291,11 +291,11 @@
                                     </span>
                                     <span>
                                         <span class="glyphicon glyphicon-comment"></span>
-                                        [[ article.zan_times]]
+                                        [[ article.comment_counts]]
                                     </span>
                                     <span>
                                         <span class="glyphicon glyphicon-eye-open"></span>
-                                        [[ article.view_times]]
+                                        [[ article.view_counts]]
                                     </span>
                                 </div>
                             </div>
@@ -342,7 +342,7 @@
                                     <ul id="hotest-post-list" class="list-group collapse in">
                                             <li class="list-group-item" v-for="hostarticle in hostarticleList">
                                             <span class="hotest-post-title"><a :href="'article/'+[[hostarticle.category]]+'/'+[[hostarticle.id]]+'.html'">[[ hostarticle.title ]]</a> </span>
-                                            <span class="badge">[[ hostarticle.view_times ]]</span>
+                                            <span class="badge">[[ hostarticle.view_counts ]]</span>
                                             </li>
                                     </ul>
                                 </div>

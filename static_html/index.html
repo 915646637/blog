@@ -290,11 +290,11 @@
                                         </span>
                                         <span>
                                             <span class="glyphicon glyphicon-comment"></span>
-                                            [[ article.zan_times ]]
+                                            [[ article.comment_counts ]]
                                         </span>
                                         <span>
                                             <span class="glyphicon glyphicon-eye-open"></span>
-                                            [[ article.view_times ]]
+                                            [[ article.view_counts ]]
                                         </span>
                             
                                     </div>
@@ -376,7 +376,7 @@
                                     <ul id="hotest-post-list" class="list-group collapse in">
                                             <li class="list-group-item" v-for="hostarticle in hostarticleList">
                                             <span class="hotest-post-title"><a :href="'article/'+[[hostarticle.category]]+'/'+[[hostarticle.id]]+'.html'">[[ hostarticle.title ]]</a> </span>
-                                            <span class="badge">[[ hostarticle.view_times ]]</span>
+                                            <span class="badge">[[ hostarticle.view_counts ]]</span>
                                             </li>
                                     </ul>
                                 </div>

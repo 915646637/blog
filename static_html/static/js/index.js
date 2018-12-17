@@ -86,20 +86,26 @@ var vm = new Vue({
 
         },
         get_hostarticleList:function () {
-            axios.get(this.host + "hostArticleLists/", {}, {
+            axios.get(this.host + "hostArticleLists/", {
+
+            }, {
                 responseType: 'json',
                 withCredentials: true
             })
-                .then(response => {
-                    this.hostarticleList = response.data
-                })
-                .catch(error => {
-                    alert("服务器内部错误")
-                })
+            .then(response => {
+                this.hostarticleList = response.data
+            })
+            .catch(error => {
+                alert("服务器内部错误")
+            })
 
         },
         get_articleList:function () {
-            axios.get(this.host + "articleLists/", {}, {
+            axios.get(this.host + "articleLists/", {
+                params:{
+                    category:'all',
+                }
+            }, {
                 responseType: 'json',
                 withCredentials: true
             })

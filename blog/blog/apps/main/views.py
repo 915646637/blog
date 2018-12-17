@@ -21,17 +21,22 @@ class ArticleListAPIView(ListAPIView):
 
     def get_queryset(self):
         category = self.request.query_params.get('category')
+        order_by = self.request.query_params.get('order_by')
+        if not order_by:
+            order_by = "create_time"
+        if not category:
+            category = "all"
         if category == 'all':
-            return Article.objects.order_by("create_time")
+            return Article.objects.order_by("-{0}".format(order_by))
         else:
             category = Category.objects.get(name=category)
-            return Article.objects.filter(category=category).order_by("create_time")
+            return Article.objects.filter(category=category).order_by("-{0}".format(order_by))
 
 
 class HostArticleAPIView(ListAPIView):
 
     serializer_class = HostArticleSerializers
-    queryset = Article.objects.order_by("-view_times")[:10]
+    queryset = Article.objects.order_by("-view_counts")[:10]
 
 
 class CarouselListAPIView(ListAPIView):

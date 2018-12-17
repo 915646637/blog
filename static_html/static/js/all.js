@@ -25,8 +25,8 @@ var vm = new Vue({
         category_list:"",
         articleList:"",
         category:"all",
-        page:1
-
+        page:1,
+        order_by:"create_time"
     },
     mounted:function(){
         this.get_navs();
@@ -52,7 +52,8 @@ var vm = new Vue({
             axios.get(this.host + "articleLists/", {
                 params:{
                     category:this.category,
-                    page:this.page
+                    page:this.page,
+                    order_by:this.order_by
                 }
             }, {
                 responseType: 'json',
@@ -105,6 +106,12 @@ var vm = new Vue({
                 this.get_articleList();
                 e.target.className="active";
             }
+        },
+
+        get_order_by_articleList(e){
+            this.order_by = e.target.defaultValue;
+            this.page = 1
+            this.get_articleList();
         },
 
         get_csrf_token:function () {

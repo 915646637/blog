@@ -220,10 +220,10 @@
                         <ol class="breadcrumb">
                             <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
                             <li><a href="/category/django/">django</a></li>
-                            <li class="hidden-xs"><a><span class="glyphicon glyphicon-calendar"></span>2018年12月1日 20:29</a></li>
+                            <li class="hidden-xs"><a><span class="glyphicon glyphicon-calendar"></span>2018年8月1日 20:29</a></li>
                             <li><a>
                                 <span class="glyphicon glyphicon-eye-open"></span>
-                                5
+                                48
                             </a></li>
                             <li class="pull-right"><a>
                                 <span class="glyphicon glyphicon-user"></span>admin
@@ -611,8 +611,8 @@ def news(request, category, page):
                                     </div>
                                     <ul id="hotest-post-list" class="list-group collapse in">
                                             <li class="list-group-item" v-for="hostarticle in hostarticleList">
-                                            <span class="hotest-post-title"><a href="/article/2.html">[[ hostarticle.title ]]</a> </span>
-                                            <span class="badge">[[ hostarticle.view_times ]]</span>
+                                            <span class="hotest-post-title"><a :href="'article/'+[[hostarticle.category]]+'/'+[[hostarticle.id]]+'.html'">[[ hostarticle.title ]]</a> </span>
+                                            <span class="badge">[[ hostarticle.view_counts ]]</span>
                                             </li>
                                     </ul>
                                 </div>

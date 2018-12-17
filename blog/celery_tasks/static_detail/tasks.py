@@ -14,7 +14,7 @@ def generate_static_detail_html(article_id):
     content = article.content
     category = article.category.name
     create_time = article.create_time
-    view_times = article.view_times
+    view_counts = article.view_counts
     author = article.author.username
     html_content = {
         "content": content,
@@ -22,7 +22,7 @@ def generate_static_detail_html(article_id):
         "title": title,
         "category": category,
         "create_time": create_time,
-        "view_times": view_times
+        "view_counts": view_counts
     }
     template = loader.get_template("deteil.html")
     html_text = template.render(html_content)

@@ -38,6 +38,5 @@ class LoginView(APIView):
 class LogoutView(APIView):
 
     def post(self,request):
-        print(request.session.session_key)
         logout(request)
         return Response({"mgs":"ok"})

@@ -254,26 +254,16 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <h1><a href="/article/vmaig_blog.html">[[ article.title ]]</a></h1>
+                                    <h1><a :href="'article/'+[[article.category]]+'/'+[[article.id]]+'.html'">[[ article.title ]]</a></h1>
 
-                                    <div class="post-tags" style="float:right">
 
-                                        <a href="/tag/django/">
-                                            <span class="label label-vmaig-1 btn">django</span>
-                                        </a>
-
-                                        <a href="/tag/python/">
-                                            <span class="label label-vmaig-2 btn">python</span>
-                                        </a>
-
-                                    </div>
                                 </div>
                                 <div class="post-content ">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <figure class="thumbnail">
-                                                <a href="/article/vmaig_blog.html">
-                                                    <img src="./static/img/article/default.jpg" height="400" alt="">
+                                                <a :href="'article/'+[[article.category]]+'/'+[[article.id]]+'.html'">
+                                                    <img :src="article.img" height="400" alt="">
                                                 </a>
                                             </figure>
                                         </div>
